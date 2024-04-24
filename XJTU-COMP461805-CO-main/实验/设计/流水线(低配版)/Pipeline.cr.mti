@@ -1,0 +1,161 @@
+{D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/CU.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/CU.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module CU
+
+Top level modules:
+	CU
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/ID_EX.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/ID_EX.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module ID_EX
+
+Top level modules:
+	ID_EX
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/CU.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/CU.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module CU
+
+Top level modules:
+	CU
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/EX_MA.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/EX_MA.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module EX_MA
+
+Top level modules:
+	EX_MA
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/ALU.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/ALU.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/ID_EX.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/ID_EX.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module ID_EX
+
+Top level modules:
+	ID_EX
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/PC.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/PC.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/IR.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/IR.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module IR
+
+Top level modules:
+	IR
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/EX_MA.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/EX_MA.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module EX_MA
+
+Top level modules:
+	EX_MA
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/ALU.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/ALU.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/PC.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/PC.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/IR.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/IR.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module IR
+
+Top level modules:
+	IR
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/defines.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/defines.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/MA_WB.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/MA_WB.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module MA_WB
+
+Top level modules:
+	MA_WB
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/MEM.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/MEM.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module MEM
+
+Top level modules:
+	MEM
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/CPU.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/CPU.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/RF.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/RF.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module RF
+
+Top level modules:
+	RF
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/defines.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/defines.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/MA_WB.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/MA_WB.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module MA_WB
+
+Top level modules:
+	MA_WB
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/MEM.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/MEM.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module MEM
+
+Top level modules:
+	MEM
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/CPU.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/CPU.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/RF.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/RF.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module RF
+
+Top level modules:
+	RF
+
+} {} {}} {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/FI_ID.v} {1 {vlog -work work -stats=none {D:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Pipeline/FI_ID.v}
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module FI_ID
+
+Top level modules:
+	FI_ID
+
+} {} {}} C:/Users/Administrator/Desktop/pipline/FI_ID.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/pipline/FI_ID.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module FI_ID
+
+Top level modules:
+	FI_ID
+
+} {} {}}

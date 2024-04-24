@@ -1,0 +1,252 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Program Files (x86)/modelsim_dlx64_10.6c/Mycode/Single_Cycle
+vALU
+Z0 !s110 1703760126
+!i10b 1
+!s100 @iPdk_:M?zcTHe<b^:j:D2
+IbX@`S1]HN9Ha>_=8P7BOT1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Administrator/Desktop/pipline
+w1703748689
+8C:/Users/Administrator/Desktop/pipline/ALU.v
+FC:/Users/Administrator/Desktop/pipline/ALU.v
+Z3 L0 10
+Z4 OP;L;10.6c;65
+r1
+!s85 0
+31
+Z5 !s108 1703760126.000000
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/ALU.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@a@l@u
+vCPU
+R0
+!i10b 1
+!s100 R;Pl9mJk1Ko9JCU7C<cL82
+IFQAPdJ_=07Wz56K[__?nE2
+R1
+R2
+w1703753724
+8C:/Users/Administrator/Desktop/pipline/CPU.v
+FC:/Users/Administrator/Desktop/pipline/CPU.v
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/CPU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/CPU.v|
+!i113 1
+R6
+R7
+n@c@p@u
+vCU
+R0
+!i10b 1
+!s100 :F]^K_8GXf:IA_8M`Zh@X0
+IR]P<ic70J>Eh2X6o=aVm<0
+R1
+R2
+w1703748820
+8C:/Users/Administrator/Desktop/pipline/CU.v
+FC:/Users/Administrator/Desktop/pipline/CU.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/CU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/CU.v|
+!i113 1
+R6
+R7
+n@c@u
+vEX_MA
+R0
+!i10b 1
+!s100 mTK^U47gOA5nBJ]6?>g[73
+IBMnkK_8Vl8]]Q2OfYN`683
+R1
+R2
+w1703753469
+8C:/Users/Administrator/Desktop/pipline/EX_MA.v
+FC:/Users/Administrator/Desktop/pipline/EX_MA.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/EX_MA.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/EX_MA.v|
+!i113 1
+R6
+R7
+n@e@x_@m@a
+vFI_ID
+R0
+!i10b 1
+!s100 :TgWjQ][5az[PlCQG2^mf0
+IeThMUDhCom:ebXhZ;_jML1
+R1
+R2
+w1703752418
+8C:/Users/Administrator/Desktop/pipline/FI_ID.v
+FC:/Users/Administrator/Desktop/pipline/FI_ID.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/FI_ID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/FI_ID.v|
+!i113 1
+R6
+R7
+n@f@i_@i@d
+vID_EX
+R0
+!i10b 1
+!s100 l_4o`UP>gcBoTAb0cEc^h1
+ICzj5>J7NRO=0841hDCScM0
+R1
+R2
+w1703753145
+8C:/Users/Administrator/Desktop/pipline/ID_EX.v
+FC:/Users/Administrator/Desktop/pipline/ID_EX.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/ID_EX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/ID_EX.v|
+!i113 1
+R6
+R7
+n@i@d_@e@x
+vIR
+Z8 !s110 1703760127
+!i10b 1
+!s100 `fd:<2i[7m1WA1eeN_`==3
+Iez_W]S7<Bl[S1]EIzhA^o3
+R1
+R2
+w1703565521
+8C:/Users/Administrator/Desktop/pipline/IR.v
+FC:/Users/Administrator/Desktop/pipline/IR.v
+Z9 L0 12
+R4
+r1
+!s85 0
+31
+Z10 !s108 1703760127.000000
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/IR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/IR.v|
+!i113 1
+R6
+R7
+n@i@r
+vMA_WB
+R8
+!i10b 1
+!s100 EU?`;PVgMSo4L1cNa09Hh2
+I[f9l<6V^m2`ZB8z`FU<YM1
+R1
+R2
+w1703753725
+8C:/Users/Administrator/Desktop/pipline/MA_WB.v
+FC:/Users/Administrator/Desktop/pipline/MA_WB.v
+L0 8
+R4
+r1
+!s85 0
+31
+R10
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/MA_WB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/MA_WB.v|
+!i113 1
+R6
+R7
+n@m@a_@w@b
+vMEM
+R8
+!i10b 1
+!s100 hhA3OIWNUbmzfZV6Pn2MH1
+Idc4aDQ<d4kAh1<0`0kECU3
+R1
+R2
+w1703601797
+8C:/Users/Administrator/Desktop/pipline/MEM.v
+FC:/Users/Administrator/Desktop/pipline/MEM.v
+L0 8
+R4
+r1
+!s85 0
+31
+R10
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/MEM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/MEM.v|
+!i113 1
+R6
+R7
+n@m@e@m
+vPC
+R8
+!i10b 1
+!s100 878R0N2hmKg[2C[UoN5oP1
+IPJEViRFF1RfoQF5@RKM[a0
+R1
+R2
+w1703565519
+8C:/Users/Administrator/Desktop/pipline/PC.v
+FC:/Users/Administrator/Desktop/pipline/PC.v
+L0 8
+R4
+r1
+!s85 0
+31
+R10
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/PC.v|
+!i113 1
+R6
+R7
+n@p@c
+vRF
+R8
+!i10b 1
+!s100 ^mE2BR[HO6^G4om3mj>5H1
+I;68Q;QU`QZ`XJkLE;<0:F3
+R1
+R2
+w1703759674
+8C:/Users/Administrator/Desktop/pipline/RF.v
+FC:/Users/Administrator/Desktop/pipline/RF.v
+R9
+R4
+r1
+!s85 0
+31
+R10
+!s107 defines.v|C:/Users/Administrator/Desktop/pipline/RF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/pipline/RF.v|
+!i113 1
+R6
+R7
+n@r@f

@@ -1,0 +1,23 @@
+h B
+h A1
+h A2
+
+s s3
+s s4
+
+s s2
+s s1
+
+l s2 s3
+l s3 s4
+l s4 s2
+
+l s2 s1
+
+l s1 B
+
+l s4 A1
+l s3 A2
+
+l s3 s1 10
+l s4 s1 10

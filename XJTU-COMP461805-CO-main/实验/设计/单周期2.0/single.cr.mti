@@ -1,0 +1,94 @@
+C:/Users/Administrator/Desktop/single/ctrl_encode_def.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/ctrl_encode_def.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+
+} {} {}} C:/Users/Administrator/Desktop/single/RF.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/RF.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module RF
+
+Top level modules:
+	RF
+
+} {} {}} C:/Users/Administrator/Desktop/single/EXT.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/EXT.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module EXT
+
+Top level modules:
+	EXT
+
+} {} {}} C:/Users/Administrator/Desktop/single/NPC.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/NPC.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module NPC
+
+Top level modules:
+	NPC
+
+} {} {}} C:/Users/Administrator/Desktop/single/alu.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/alu.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/Users/Administrator/Desktop/single/mux.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/mux.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module mux2
+-- Compiling module mux4
+-- Compiling module mux8
+-- Compiling module mux16
+
+Top level modules:
+	mux2
+	mux4
+	mux8
+	mux16
+
+} {} {}} C:/Users/Administrator/Desktop/single/ctrl.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/ctrl.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module ctrl
+
+Top level modules:
+	ctrl
+
+} {} {}} C:/Users/Administrator/Desktop/single/sccomp.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/sccomp.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module sccomp
+
+Top level modules:
+	sccomp
+
+} {} {}} C:/Users/Administrator/Desktop/single/sccpu.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/sccpu.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module sccpu
+
+Top level modules:
+	sccpu
+
+} {} {}} C:/Users/Administrator/Desktop/single/im.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/im.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module im
+
+Top level modules:
+	im
+
+} {} {}} C:/Users/Administrator/Desktop/single/dm.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/dm.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module dm
+
+Top level modules:
+	dm
+
+} {} {}} C:/Users/Administrator/Desktop/single/sccomp_tb.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/sccomp_tb.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module sccomp_tb
+
+Top level modules:
+	sccomp_tb
+
+} {} {}} C:/Users/Administrator/Desktop/single/PC.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/single/PC.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}}

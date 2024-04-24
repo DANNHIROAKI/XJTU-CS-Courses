@@ -1,0 +1,306 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Administrator/Desktop/single
+valu
+Z0 !s110 1703760047
+!i10b 1
+!s100 9cdE69IgzzN5Z?B<gUZ>G2
+IM69CVNzYoke_Hn2:Kzd5>2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Administrator/Desktop/muti
+w1703742891
+8C:/Users/Administrator/Desktop/muti/alu.v
+FC:/Users/Administrator/Desktop/muti/alu.v
+L0 5
+Z3 OP;L;10.6c;65
+r1
+!s85 0
+31
+Z4 !s108 1703760047.000000
+!s107 ctrl_encode_def.v|C:/Users/Administrator/Desktop/muti/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/alu.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vctrl
+R0
+!i10b 1
+!s100 Mz^`PKo9f<KTC[OO92M5n3
+IjLXz0QV`;@;cHYN^HHj880
+R1
+R2
+w1703745989
+8C:/Users/Administrator/Desktop/muti/ctrl.v
+FC:/Users/Administrator/Desktop/muti/ctrl.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/ctrl.v|
+!i113 1
+R5
+R6
+vdm
+R0
+!i10b 1
+!s100 SLg]N;b58Q[RFGCBOKXA?0
+ICiDSboMk2ok58z`^SE8Kg2
+R1
+R2
+w1703742980
+8C:/Users/Administrator/Desktop/muti/dm.v
+FC:/Users/Administrator/Desktop/muti/dm.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/dm.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/dm.v|
+!i113 1
+R5
+R6
+vEXT
+R0
+!i10b 1
+!s100 d`GCF]Xe]JFP6O7KiSl;j1
+Ii^cIjL47h43`A5U=@dc>J2
+R1
+R2
+w1703742993
+8C:/Users/Administrator/Desktop/muti/EXT.v
+FC:/Users/Administrator/Desktop/muti/EXT.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/EXT.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/EXT.v|
+!i113 1
+R5
+R6
+n@e@x@t
+vflopenr
+R0
+!i10b 1
+!s100 n^nb0G_Wj7b:6]CCI126U0
+If3Wc:>7?k:>2mlkZ=eR9]0
+R1
+R2
+w1703743114
+8C:/Users/Administrator/Desktop/muti/flopenr.v
+FC:/Users/Administrator/Desktop/muti/flopenr.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/flopenr.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/flopenr.v|
+!i113 1
+R5
+R6
+vflopr
+R0
+!i10b 1
+!s100 ^R^nULB_LCkF4LXi__eT[3
+I6kio3>:GD`CG?E3Tc0okc3
+R1
+R2
+w1703743217
+8C:/Users/Administrator/Desktop/muti/flopr.v
+FC:/Users/Administrator/Desktop/muti/flopr.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/flopr.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/flopr.v|
+!i113 1
+R5
+R6
+vmccomp
+R0
+!i10b 1
+!s100 nLI2YIZM6AVMLGGC=X>T:2
+I`m564MAl0E9OF3H_m55[@2
+R1
+R2
+Z7 w1703703915
+8C:/Users/Administrator/Desktop/muti/mccomp.v
+FC:/Users/Administrator/Desktop/muti/mccomp.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/mccomp.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/mccomp.v|
+!i113 1
+R5
+R6
+vmccomp_tb
+R0
+!i10b 1
+!s100 cUIb1Hz_J8>MV7X?]^_1[3
+ISL=XfgkeV8QM]zBnf4K[50
+R1
+R2
+w1703743769
+8C:/Users/Administrator/Desktop/muti/mccomp_tb.v
+FC:/Users/Administrator/Desktop/muti/mccomp_tb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/mccomp_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/mccomp_tb.v|
+!i113 1
+R5
+R6
+vmccpu
+R0
+!i10b 1
+!s100 oV06k=?S]5E4Z1Pl@:IAb1
+IglZiQNGn=M]LNFY@mzOJJ2
+R1
+R2
+w1703745997
+8C:/Users/Administrator/Desktop/muti/mccpu.v
+FC:/Users/Administrator/Desktop/muti/mccpu.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/mccpu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/mccpu.v|
+!i113 1
+R5
+R6
+vmux16
+R0
+!i10b 1
+!s100 _kD]@DiV[:SJ[]_:lBKV[0
+Il>1d5OlRbC<n]l26b1QBI1
+R1
+R2
+R7
+Z8 8C:/Users/Administrator/Desktop/muti/mux.v
+Z9 FC:/Users/Administrator/Desktop/muti/mux.v
+L0 71
+R3
+r1
+!s85 0
+31
+R4
+Z10 !s107 C:/Users/Administrator/Desktop/muti/mux.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/mux.v|
+!i113 1
+R5
+R6
+vmux2
+R0
+!i10b 1
+!s100 QXC^TY7h[nMB8eh1LThKL1
+I303XiKIQ5TjW]di58DzjH0
+R1
+R2
+R7
+R8
+R9
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6
+vmux4
+R0
+!i10b 1
+!s100 3KQ[c;ZUY31^gKT9SAAk20
+IbPTM?GgW@`Iofe[hck2CK3
+R1
+R2
+R7
+R8
+R9
+L0 15
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6
+vmux8
+R0
+!i10b 1
+!s100 FLg[0F=fBIb=LWfFP8G0M0
+IR`H_lje_7i39XX0fQ2^fD0
+R1
+R2
+R7
+R8
+R9
+L0 40
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6
+vRF
+R0
+!i10b 1
+!s100 e?U@1Fe^@gYOeA1VZZ@]^0
+IgUUV[m:@@C3elo_bXad?;2
+R1
+R2
+w1703743718
+8C:/Users/Administrator/Desktop/muti/RF.v
+FC:/Users/Administrator/Desktop/muti/RF.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/muti/RF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/muti/RF.v|
+!i113 1
+R5
+R6
+n@r@f

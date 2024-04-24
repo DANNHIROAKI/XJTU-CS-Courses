@@ -1,0 +1,87 @@
+C:/Users/Administrator/Desktop/muti/ctrl_encode_def.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/ctrl_encode_def.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+
+} {} {}} C:/Users/Administrator/Desktop/muti/mccpu.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/mccpu.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module mccpu
+
+Top level modules:
+	mccpu
+
+} {} {}} C:/Users/Administrator/Desktop/muti/dm.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/dm.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module dm
+
+Top level modules:
+	dm
+
+} {} {}} C:/Users/Administrator/Desktop/muti/EXT.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/EXT.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module EXT
+
+Top level modules:
+	EXT
+
+} {} {}} C:/Users/Administrator/Desktop/muti/mux.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/mux.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module mux2
+-- Compiling module mux4
+-- Compiling module mux8
+-- Compiling module mux16
+
+Top level modules:
+	mux2
+	mux4
+	mux8
+	mux16
+
+} {} {}} C:/Users/Administrator/Desktop/muti/alu.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/alu.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/Users/Administrator/Desktop/muti/flopr.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/flopr.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module flopr
+
+Top level modules:
+	flopr
+
+} {} {}} C:/Users/Administrator/Desktop/muti/mccomp_tb.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/mccomp_tb.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module mccomp_tb
+
+Top level modules:
+	mccomp_tb
+
+} {} {}} C:/Users/Administrator/Desktop/muti/flopenr.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/flopenr.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module flopenr
+
+Top level modules:
+	flopenr
+
+} {} {}} C:/Users/Administrator/Desktop/muti/mccomp.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/mccomp.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module mccomp
+
+Top level modules:
+	mccomp
+
+} {} {}} C:/Users/Administrator/Desktop/muti/RF.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/RF.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module RF
+
+Top level modules:
+	RF
+
+} {} {}} C:/Users/Administrator/Desktop/muti/ctrl.v {1 {vlog -work work -stats=none C:/Users/Administrator/Desktop/muti/ctrl.v
+Model Technology ModelSim DE-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module ctrl
+
+Top level modules:
+	ctrl
+
+} {} {}}

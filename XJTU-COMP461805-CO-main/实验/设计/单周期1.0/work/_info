@@ -1,0 +1,362 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Administrator/Desktop/yxy/Single_Cycle
+vALU
+Z0 !s110 1703609903
+!i10b 1
+!s100 4iR0`Znk9XC=zm`df^JQ40
+InESkC7lcIh<miSPBXLo6L0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Administrator/Desktop/Single_Cycle
+w1666845588
+8C:/Users/Administrator/Desktop/cpumips32/ALU.v
+FC:/Users/Administrator/Desktop/cpumips32/ALU.v
+L0 2
+Z3 OP;L;10.6c;65
+r1
+!s85 0
+31
+Z4 !s108 1703609903.000000
+!s107 C:/Users/Administrator/Desktop/cpumips32/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/ALU.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@a@l@u
+vCPU
+R0
+!i10b 1
+!s100 zJaYJ]QWSHX6=OW_Z[Y`U2
+I0_7Ng<:4Ac7ORR<1eLJOm3
+R1
+R2
+w1666752153
+8C:/Users/Administrator/Desktop/cpumips32/CPU.v
+FC:/Users/Administrator/Desktop/cpumips32/CPU.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/cpumips32/CPU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/CPU.v|
+!i113 1
+R5
+R6
+n@c@p@u
+vCPU_tb
+Z7 !s110 1703609904
+!i10b 1
+!s100 HSToTOz2Jda^^8b]=P3I@2
+I4coRa0KINSAjZ:V4P197L1
+R1
+R2
+w1666838603
+8C:/Users/Administrator/Desktop/cpumips32/CPU_tb.v
+FC:/Users/Administrator/Desktop/cpumips32/CPU_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Administrator/Desktop/cpumips32/CPU_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/CPU_tb.v|
+!i113 1
+R5
+R6
+n@c@p@u_tb
+vCU
+R7
+!i10b 1
+!s100 D:04:;MA6777L6EcXFTS[0
+IDE<:U;zinc;fjA7^eDicI3
+R1
+R2
+w1666846511
+8C:/Users/Administrator/Desktop/cpumips32/CU.v
+FC:/Users/Administrator/Desktop/cpumips32/CU.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1703609904.000000
+!s107 C:/Users/Administrator/Desktop/cpumips32/CU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/CU.v|
+!i113 1
+R5
+R6
+n@c@u
+vData
+R7
+!i10b 1
+!s100 BUReVMfg?mDiNz`db>_]G1
+I9h2TCMS`_@fVF[Sg7flOf2
+R1
+R2
+w1666838311
+8C:/Users/Administrator/Desktop/cpumips32/Data.v
+FC:/Users/Administrator/Desktop/cpumips32/Data.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Administrator/Desktop/cpumips32/Data.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/Data.v|
+!i113 1
+R5
+R6
+n@data
+vEX_MA
+!s110 1703609805
+!i10b 1
+!s100 QikmMZm[_agTKm]fWN^1Q2
+Ik`IDL?86bPLdZAKgjo_QZ0
+R1
+R2
+w1703157758
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/EX_MA.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/EX_MA.v
+L0 4
+R3
+r1
+!s85 0
+31
+Z9 !s108 1703609805.000000
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/EX_MA.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/EX_MA.v|
+!i113 1
+R5
+R6
+n@e@x_@m@a
+vFI_ID
+Z10 !s110 1703609806
+!i10b 1
+!s100 ;KY^cd;^DTlRM5I>Vm0el3
+I0PL7eWGe@:7jd3;zi6__43
+R1
+R2
+w1703155686
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/FI_ID.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/FI_ID.v
+L0 4
+R3
+r1
+!s85 0
+31
+R9
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/FI_ID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/FI_ID.v|
+!i113 1
+R5
+R6
+n@f@i_@i@d
+vID_EX
+R10
+!i10b 1
+!s100 :P:RPh?6aQWE4>6D8AX;93
+I[];>:BMbSQbO72OT0MEKa3
+R1
+R2
+w1703155688
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/ID_EX.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/ID_EX.v
+L0 4
+R3
+r1
+!s85 0
+31
+Z11 !s108 1703609806.000000
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/ID_EX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/ID_EX.v|
+!i113 1
+R5
+R6
+n@i@d_@e@x
+vInstruction
+R7
+!i10b 1
+!s100 aDm_^CYRmAeMBYDg9U`QK0
+IH5B8:VRD8jfmGF[[hf96;3
+R1
+R2
+w1666837674
+8C:/Users/Administrator/Desktop/cpumips32/Instruction.v
+FC:/Users/Administrator/Desktop/cpumips32/Instruction.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Administrator/Desktop/cpumips32/Instruction.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/Instruction.v|
+!i113 1
+R5
+R6
+n@instruction
+vIR
+R10
+!i10b 1
+!s100 aI@gcalJdQ=mjm:?ZQ1GO0
+IFcB1:?`n>:0>9Q;G2>71W0
+R1
+R2
+w1702558548
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/IR.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/IR.v
+L0 3
+R3
+r1
+!s85 0
+31
+R11
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/IR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/IR.v|
+!i113 1
+R5
+R6
+n@i@r
+vMA_WB
+R10
+!i10b 1
+!s100 AmbFmGQZiCGi_1GfY:JN72
+I<?eoeKKoMV2IJCm7IL]SV2
+R1
+R2
+w1703155692
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MA_WB.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MA_WB.v
+L0 4
+R3
+r1
+!s85 0
+31
+R11
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MA_WB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MA_WB.v|
+!i113 1
+R5
+R6
+n@m@a_@w@b
+vMEM
+R10
+!i10b 1
+!s100 Qi[hz6YTLJF]I;CaVaUEG3
+I2nzZV<65Kf]Ee>ND2jofY2
+R1
+R2
+w1701955972
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MEM.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MEM.v
+L0 3
+R3
+r1
+!s85 0
+31
+R11
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MEM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/MEM.v|
+!i113 1
+R5
+R6
+n@m@e@m
+vPC
+R7
+!i10b 1
+!s100 nh6FVo[2CR]dTLnRfO`Kf2
+IYJkYQ7;NTcYmFc0K^:IkF3
+R1
+R2
+w1638254046
+8C:/Users/Administrator/Desktop/cpumips32/PC.v
+FC:/Users/Administrator/Desktop/cpumips32/PC.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Administrator/Desktop/cpumips32/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/PC.v|
+!i113 1
+R5
+R6
+n@p@c
+vRegister
+R7
+!i10b 1
+!s100 T:VUEd[^KZZkHheLQgB893
+I[P_<`]BBcJ@:=7=zWkJQF1
+R1
+R2
+w1666783749
+8C:/Users/Administrator/Desktop/cpumips32/Register.v
+FC:/Users/Administrator/Desktop/cpumips32/Register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Administrator/Desktop/cpumips32/Register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/Register.v|
+!i113 1
+R5
+R6
+n@register
+vRF
+R10
+!i10b 1
+!s100 0UlMIX5`YbSlPVMj4^Hgo3
+I3OgQ:AMV]@[bR7cC@5bEY2
+R1
+R2
+w1703157114
+8C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/RF.v
+FC:/Users/Administrator/Desktop/yxy/Multiple_Cycle/RF.v
+L0 3
+R3
+r1
+!s85 0
+31
+R11
+!s107 defines.v|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/RF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/yxy/Multiple_Cycle/RF.v|
+!i113 1
+R5
+R6
+n@r@f
+vSign_Extend
+R7
+!i10b 1
+!s100 ZiY4mii]in[6TDU>:Wz661
+IakzBORNk3fLGc8G3:AHoY2
+R1
+R2
+w1637216409
+8C:/Users/Administrator/Desktop/cpumips32/Sign_Extend.v
+FC:/Users/Administrator/Desktop/cpumips32/Sign_Extend.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Administrator/Desktop/cpumips32/Sign_Extend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/cpumips32/Sign_Extend.v|
+!i113 1
+R5
+R6
+n@sign_@extend

@@ -1,0 +1,18 @@
+# The topology of THE ENTIRE INTERNET
+# (the important parts, anyway)
+
+# This can be loaded with loader.py
+
+h Me
+h GoogleServer
+h CatVideoServer
+s Berkeley
+s Comcast
+s GoogleNet
+s YouTubeNet
+l Me Berkeley 0.25
+l Berkeley Comcast 0.5
+l Comcast GoogleNet 0.5
+l GoogleNet GoogleServer 0.25
+l Comcast YouTubeNet 0.5
+l YouTubeNet CatVideoServer 0.25

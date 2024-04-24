@@ -1,0 +1,747 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>2. 进程管理(b处理器调度)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='3-cpu调度'><font color='cornflowerblue'><span>3. CPU调度</span></font></h1><blockquote><h2 id='31-cpu的三级调度'><font color='cornflowerblue'><span>3.1. CPU的三级调度</span></font></h2><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231105151628325.png" alt="image-20231105151628325" style="zoom:50%;" /><span> </span></p><h3 id='311-作业调度高级调度宏观调度长程调度'><font color='cornflowerblue'><span>3.1.1. 作业调度/高级调度/宏观调度/长程调度</span></font></h3><blockquote><p>1️⃣<span>内容：选取外存中后备状态的作业→装入内存/IO后建立进程→进程就绪</span></p><p>2️⃣<span>特点：效率低几分钟一次；仅在通用/批处理OS上才有作业调度，决定了有多少程序在多道运行</span></p><p>3️⃣<span>核心问题：多少作业进内存？(由规模速度决定)；哪些作业进内存？(先进外存的先进内存/短作业优先等等)</span></p></blockquote><h3 id='312-中级调度交换调度'><font color='cornflowerblue'><span>3.1.2. 中级调度/交换调度</span></font></h3><blockquote><p>1️⃣<span>目的：提高内存利用率/系统吞吐</span></p><p>2️⃣<span>内容：把内存中阻塞进程交换到外存对换区(挂起)，必要时再调入内存</span></p></blockquote><h3 id='313-低级调度进程调度微观调度短程调度'><font color='cornflowerblue'><span>3.1.3. 低级调度/进程调度/微观调度/短程调度</span></font></h3><blockquote><p><span>从就绪队列→CPU执行，特点是高频</span></p></blockquote></blockquote><h2 id='32-调度性能评价指标调度准则'><font color='cornflowerblue'><span>3.2. 调度性能评价指标(调度准则)</span></font></h2><blockquote><p>1️⃣<span>CPU利用率大：CPU被工作占用时间/总时间</span></p><p>2️⃣<span>系统吞吐大：单位时间CPU完成作业数(但长作业会降低吞吐)</span></p><p>3️⃣<span>响应时间短：</span><strong><span>用户提交请求到系统首次做出响应的时间</span></strong></p><p>4️⃣<span>周转时间：作业从提交到完成耗时</span></p><ol start='' ><li><p><span>平均周转时间：是指多个作业(如n个作业)周转时间的平均值</span></p></li><li><p><span>带权周转时间：作业周转时间与作业实际运行时间(服务时间)的比</span></p></li></ol><p>5️⃣<span>等待时间短：</span><strong><span>进程在就绪队列中等待被调度的时间</span></strong></p></blockquote><h2 id='33-进程调度概述'><font color='cornflowerblue'><span>3.3. 进程调度概述</span></font></h2><blockquote><h3 id='331-进程调度的功能'><font color='orange'><span>3.3.1. 进程调度的功能</span></font></h3><blockquote><p>1️⃣<span>记录所有进程的状态，进程管理模块会把每个进程的状态记录在其PCB中，组织PCB队列</span></p><p>2️⃣<span>选取就绪进程获得CPU资源，开始执行(先来先服务，时间片)</span></p><p>3️⃣<span>处理器分配：在将程序从执行转为就绪/阻塞前保护CPU现场，然后从转为执行时恢复CPU现场</span></p></blockquote><h3 id='332-进程调度的诱因时机'><font color='cornflowerblue'><span>3.3.2. 进程调度的诱因(时机)</span></font></h3><blockquote><p>1️⃣<span>运行→等待：运行进程因为IO/阻塞原语等阻塞</span></p><p>2️⃣<span>运行→就绪：(抢占调度)有更高优先级程序要用CPU，(分时系统)时间片用完</span></p><p>3️⃣<span>等待→就绪：(抢占调度)执行完系统调用后返回用户进程</span></p><p>4️⃣<span>终止运行：进程运行结束(正常/出错异常)</span></p></blockquote><h3 id='333-不能调度的情况'><font color='orange'><span>3.3.3. 不能调度的情况</span></font></h3><blockquote><p>1️⃣<span>在处理中断：逻辑上中断处理属于OS，不属于任一进程，时刻不能被剥夺CPU资源</span></p><p>2️⃣<span>程序进入OS kernel程序临界区：此时程序需要独占共享数据，所以要加锁防止其他程序进入，也不可切换</span></p><p>3️⃣<span>需要完全屏蔽中断的原子操作过程：加锁/解锁/中断现场保护(恢复)</span></p></blockquote><h3 id='334-进程调度的方式'><font color='red'><span>3.3.4. 进程调度的方式</span></font></h3><blockquote><p><span>突然某个更紧迫的进程需要处理，CPU应该如何分配</span></p><p>1️⃣<span>非抢占方式/不可剥夺方式：优先级高的进程进入就绪队列，也要排队(等目前进程结束/阻塞后再执行)，实现简单开销小但是实时性差</span></p><p>2️⃣<span>抢占方式/剥夺方式：进程进入就绪队列，可以插队(立即暂现在进程去执行优先级高的进程)</span></p><p>3️⃣<span>抢占原则：什么进程可以插队？</span></p><ol start='' ><li><p><span>时间片原则(分时系统)：用完一个时间片后，停止目前程序运行并重新调度</span></p></li><li><p><span>优先权原则：优先级高的进入队列，停止目前的进程，去执行优先级更高的进程</span></p></li><li><p><span>短作业优先：新到达作业比执行作业明显短时，停止目前的进程，去执行优先级更高的进程</span></p></li></ol></blockquote><h3 id='335-分派程序'><font color='cornflowerblue'><span>3.3.5. 分派程序</span></font></h3><blockquote><p>1️⃣<span>定义：OS的一部分，负责按照某种策略(优先级/轮转法)选一个就绪进程给CPU，是就绪到执行的最后一步</span></p><p>2️⃣<span>工作原理：调度器选好进程→分派程序上下文切换(保存前一进程状态/加载下个进程上下文到CPU)</span></p><p>3️⃣<span>分派延迟：分派程序终结上个进程—[分派延迟]—→启动另一个进程</span></p><p>4️⃣<span>如何降低延迟：系统调用可抢占(确保高优先级进程快速响应)+</span></p></blockquote></blockquote><h2 id='34-常见调度算法如何把cpu分配给进程'><font color='red'><span>3.4. 常见调度算法(如何把CPU分配给进程)</span></font></h2><blockquote><p><font color="red"><span>调度算法影响的是等待时间，而不能影响进程真正使用CPU的时间和I/O时间</span></font></p><h3 id='341-先来先服务作业进程调度fcfs'><font color='red'><span>3.4.1. 先来先服务(作业/进程调度)FCFS</span></font></h3><blockquote><p>1️⃣<span>概述：按进程进入就绪队列的先后来分配CPU，非抢占方式(一旦一个进程占据CPU就会一直执行)</span></p><p>2️⃣<span>特点：有利于长作业不利于短作业；有利于CPU繁忙型不利于I/O繁忙型</span></p><p>3️⃣<span>适用范围：结合其它调度策略使用，例如优先级调度策略中，用一优先级的进程就采用FCFS</span></p></blockquote><h3 id='342-短作业优先调度算法作业进程调度sjf'><font color='red'><span>3.4.2. 短作业优先调度算法(作业/进程调度)SJF</span></font></h3><blockquote><p>1️⃣<span>概述：从后备作业/进程队列选估计运行时间最短的几个调入内存，非抢占</span></p><p>2️⃣<span>特点：全部作业同时到达时SJF算法最佳(平均周转时间最短)，对长作业不利(长作业容易等到饿死)，同时也难以实现</span></p><p>3️⃣<span>最短剩余时间优先调度：SJF的抢占调度版本。当某一进程到达，其时间片比当前执行进程剩余时间片更少时，抢占调度版会强行执行新进程/非抢占调度版本会保持原有进程执行</span></p></blockquote><h3 id='343-优先级调度算法作业进程调度'><font color='red'><span>3.4.3. 优先级调度算法(作业/进程调度)</span></font></h3><blockquote><p><span>用整数小/大区分优先级高/低，优先级高的优先分配CPU，所以优先级如何确定？</span></p><h4 id='3431-静态优先级进程创建时确定后不变'><font color='red'><span>3.4.3.1. 静态优先级：进程创建时确定后不变</span></font></h4><blockquote><p>1️⃣<span>按进程类型：系统进程&gt;用户进程，前台作业&gt;后台作业，I/O繁忙的进程&gt;CPU繁忙进程</span></p><p>2️⃣<span>按作业需要的资源：进程占据资源(CPU时间/内存大小/IO类型)越多优先级越低</span></p><p>3️⃣<span>按用户类型和要求：用户收费越高优先级越高(如服务器租用)</span></p></blockquote><h4 id='3432-动态优先级优先级随进程推进而改变'><font color='red'><span>3.4.3.2. 动态优先级：优先级随进程推进而改变</span></font></h4><blockquote><p>1️⃣<span>进程使用CPU情况：使用时间越长优先级越低</span></p><p>2️⃣<span>进程就绪等待情况：等的越久优先级越高</span></p><p>3️⃣<span>进程占用资源情况：占用资源越多优先级高还是低不好说</span></p></blockquote><h4 id='ps-一些概念'><font color='cornflowerblue'><span>PS: 一些概念</span></font></h4><blockquote><p>1️⃣<span>优先级倒置：低优先级进程占据内核数据，高优先级进程必须等</span></p><p>2️⃣<span>优先级继承：低优先进程用高优先资源时提升其优先级，但资源回收后其优先级又会回归原样</span></p></blockquote></blockquote><h3 id='344-时间片轮转调度进程调度rr'><font color='red'><span>3.4.4. 时间片轮转调度(进程调度)RR</span></font></h3><blockquote><p>1️⃣<span>概述：进程调度程序选择就绪队列中的一个进程，执行一个时间片后将其送入队尾，去执行下一个时间片，以此类推</span></p><p>2️⃣<span>时间片多长(核心问题)：太长(所有进程一个时间片内完成)则算法就退化为FCFS，如果时间片太短则切换频繁CPU利用率不高，通常为10-100ms</span></p><p>3️⃣<span>时间片大小确定因素</span></p><ol start='' ><li><p><span>系统响应时间T=N×q=就绪队列中进程数×时间片大小，分时系统对时间片有要求</span></p></li><li><p><span>就绪队列进程数</span></p></li><li><p><span>系统处理能力：计算机速度越快，单位时间处理命令就越多，时间片越小</span></p></li></ol><p>4️⃣<span>特点：</span></p><ol start='' ><li><p><span>平均周转时长长于SJF，但是当大多进程在一个时间片内完成，周转时间就会减少</span></p></li><li><p><span>响应时间短于SJF</span></p></li></ol></blockquote><h3 id='345-高响应比作业调度'><font color='red'><span>3.4.5. 高响应比(作业调度)</span></font></h3><blockquote><p><span>FCFS+短作业优先</span></p><p>0️⃣<mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="72.944ex" height="4.761ex" role="img" focusable="false" viewBox="0 -1302.1 32241.1 2104.3" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.815ex;"><defs><path id="MJX-2-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-2-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-2-TEX-N-2248" d="M55 319Q55 360 72 393T114 444T163 472T205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346Q609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452Q722 386 675 338T555 289Q514 289 468 310T388 357T308 404T224 426Q164 426 125 393T83 318Q81 289 69 289Q55 289 55 319ZM55 85Q55 126 72 159T114 210T163 238T205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112Q609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123T308 170T224 192Q164 192 125 159T83 84Q80 55 69 55Q55 55 55 85Z"></path><path id="MJX-2-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">响</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">应</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">比</text></g><g data-mml-node="mo" transform="translate(2940.5,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(3996.3,0)"><g data-mml-node="mrow" transform="translate(1114.8,552.1) scale(0.707)"><g data-mml-node="mpadded"><g data-mml-node="mrow"></g></g><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">响</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">应</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(2662.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g></g><g data-mml-node="mrow" transform="translate(220,-590) scale(0.707)"><g data-mml-node="mpadded"><g data-mml-node="mrow"></g></g><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">预</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">估</text></g><g data-mml-node="mtext" transform="translate(1789.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">运</text></g><g data-mml-node="mtext" transform="translate(2684.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">行</text></g><g data-mml-node="mtext" transform="translate(3568.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(4452.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g></g><rect width="5536.3" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(10050.4,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(11106.1,0)"><g data-mml-node="mrow" transform="translate(220,552.1) scale(0.707)"><g data-mml-node="mpadded"><g data-mml-node="mrow"></g></g><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">业</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">等</text></g><g data-mml-node="mtext" transform="translate(2673.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">待</text></g><g data-mml-node="mtext" transform="translate(3557.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(4441.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g><g data-mml-node="mo" transform="translate(5547.7,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="mtext" transform="translate(6548,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mtext" transform="translate(7432,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">业</text></g><g data-mml-node="mtext" transform="translate(8326.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">运</text></g><g data-mml-node="mtext" transform="translate(9221.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">行</text></g><g data-mml-node="mtext" transform="translate(10105.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(10989.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g></g><g data-mml-node="mrow" transform="translate(3488.6,-590) scale(0.707)"><g data-mml-node="mpadded"><g data-mml-node="mrow"></g></g><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">预</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">估</text></g><g data-mml-node="mtext" transform="translate(1789.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">运</text></g><g data-mml-node="mtext" transform="translate(2684.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">行</text></g><g data-mml-node="mtext" transform="translate(3568.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(4452.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g></g><rect width="12073.5" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(23697.4,0)"><use data-c="2248" xlink:href="#MJX-2-TEX-N-2248"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(24753.1,0)"></g><g data-mml-node="mfrac" transform="translate(24753.1,0)"><g data-mml-node="mrow" transform="translate(220,552.1) scale(0.707)"><g data-mml-node="mpadded"><g data-mml-node="mrow"></g></g><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">业</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">等</text></g><g data-mml-node="mtext" transform="translate(2673.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">待</text></g><g data-mml-node="mtext" transform="translate(3557.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(4441.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g></g><g data-mml-node="mrow" transform="translate(220,-590) scale(0.707)"><g data-mml-node="mpadded"><g data-mml-node="mrow"></g></g><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">业</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">运</text></g><g data-mml-node="mtext" transform="translate(2673.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">行</text></g><g data-mml-node="mtext" transform="translate(3557.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mtext" transform="translate(4441.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g></g><rect width="5525.5" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(30740.9,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="mn" transform="translate(31741.1,0)"><use data-c="31" xlink:href="#MJX-2-TEX-N-31"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>响</mtext><mtext>应</mtext><mtext>比</mtext><mo>=</mo><mfrac><mrow><mpadded height="8.6pt" depth="3pt" width="0"><mrow></mrow></mpadded><mstyle displaystyle="false" scriptlevel="0"><mrow data-mjx-texclass="ORD"><mtext>响</mtext><mtext>应</mtext><mtext>时</mtext><mtext>间</mtext></mrow></mstyle></mrow><mrow><mpadded height="8.6pt" depth="3pt" width="0"><mrow></mrow></mpadded><mstyle displaystyle="false" scriptlevel="0"><mrow data-mjx-texclass="ORD"><mtext>预</mtext><mtext>估</mtext><mtext>运</mtext><mtext>行</mtext><mtext>时</mtext><mtext>间</mtext></mrow></mstyle></mrow></mfrac><mo>=</mo><mfrac><mrow><mpadded height="8.6pt" depth="3pt" width="0"><mrow></mrow></mpadded><mstyle displaystyle="false" scriptlevel="0"><mrow data-mjx-texclass="ORD"><mtext>作</mtext><mtext>业</mtext><mtext>等</mtext><mtext>待</mtext><mtext>时</mtext><mtext>间</mtext><mo>+</mo><mtext>作</mtext><mtext>业</mtext><mtext>运</mtext><mtext>行</mtext><mtext>时</mtext><mtext>间</mtext></mrow></mstyle></mrow><mrow><mpadded height="8.6pt" depth="3pt" width="0"><mrow></mrow></mpadded><mstyle displaystyle="false" scriptlevel="0"><mrow data-mjx-texclass="ORD"><mtext>预</mtext><mtext>估</mtext><mtext>运</mtext><mtext>行</mtext><mtext>时</mtext><mtext>间</mtext></mrow></mstyle></mrow></mfrac><mo>≈</mo><mrow data-mjx-texclass="ORD"></mrow><mfrac><mrow><mpadded height="8.6pt" depth="3pt" width="0"><mrow></mrow></mpadded><mstyle displaystyle="false" scriptlevel="0"><mrow data-mjx-texclass="ORD"><mtext>作</mtext><mtext>业</mtext><mtext>等</mtext><mtext>待</mtext><mtext>时</mtext><mtext>间</mtext></mrow></mstyle></mrow><mrow><mpadded height="8.6pt" depth="3pt" width="0"><mrow></mrow></mpadded><mstyle displaystyle="false" scriptlevel="0"><mrow data-mjx-texclass="ORD"><mtext>作</mtext><mtext>业</mtext><mtext>运</mtext><mtext>行</mtext><mtext>时</mtext><mtext>间</mtext></mrow></mstyle></mrow></mfrac><mo>+</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container><script type="math/tex">响应比=\cfrac{响应时间}{预估运行时间}=\cfrac{作业等待时间+作业运行时间}{预估运行时间}\approx{}\cfrac{作业等待时间}{作业运行时间}+1</script></p><p>1️⃣<span>概述：每次调度时先计算就绪队列中每个作业响应比，响应比高的优先级高</span></p><p>2️⃣<span>特点：对短作业有利(预估运行时间短)+兼顾长作业(等足够长就优先级高了)，但计算响应比增加了开销</span></p><p>3️⃣<span>与其他调度类型相比</span></p><ol start='' ><li><p><span>若等待时间相同，则作业越短，运行时间越短，响应比越大，优先级越高，等于SJF</span></p></li><li><p><span>若运行时间相同，则先来的进程等的时间长，优先级高，等于FCFS</span></p></li></ol></blockquote><h3 id='346-多级队列进程调度'><font color='red'><span>3.4.6. 多级队列(进程调度)</span></font></h3><blockquote><p>1️⃣<span>含义：将进程按照类型/优先级/占用资源分类，每类进程弄一个就绪队列(每个进程固定属于一个)，每个队列调度算法不一样</span></p><p>2️⃣<span>实例：就绪队列分为，前台/交互式/时间片调度，后台/批处理/FCFS</span></p><p>3️⃣<span>队列层级的调度</span></p><ol start='' ><li><p><span>队列优先级：比如，前台运行完后再运行后台</span></p></li><li><p><span>给队列时间片：给每个队列一个时间片，80%时间执行前台，20%时间执行后台</span></p></li></ol></blockquote><h3 id='347-多级反馈队列进程调度'><font color='red'><span>3.4.7. 多级反馈队列(进程调度)</span></font></h3><blockquote><p><span>时间片轮转调度+优先级调度</span></p><p><img src="https://s2.loli.net/2023/11/05/XF3VuxfyYziS5hr.png" alt="image-20231105221135362" style="zoom:50%;" /><span> </span></p><p>1️⃣<span>概述：有多个就绪队列，每个队列有优先级，各自按时间片轮转，调度允许进程跨队列移动</span></p><p>2️⃣<span>关于时间片的长度：</span><strong><span>优先级越高的队列时间片越小</span></strong><span>，通常第i+1队列的时间片是第i队列时间片的两倍</span></p><p>3️⃣<span>一个进程要放在什么优先级的队列中？(优先级从上到下减小)</span></p><ol start='' ><li><p><span>新进程先进入第一队列末尾(FCFS调度)，随之被执行一个时间片，若执行完就退出</span></p></li><li><p><span>若一时间内未执行完，就把他丢到第二个队列尾(FCFS调度)，以此类推</span></p></li><li><p><span>若进程到了优先级最低队列都没执行完，就只有重新塞回本队列尾了</span></p></li></ol><p><span>PS: 阻塞进程的优先级低于以上一切队列</span></p><p>4️⃣<span>按什么顺序执行优先级不同的队列？</span></p><ol start='' ><li><p><span>优先执行优先级高的队列：只当第一队列空才执行第二队列进程</span></p></li><li><p><span>抢占：执行第二队列进程时，有一进程插入第一队列，则转而执行插入进程(第二队列原来的进程丢到队尾)</span></p></li></ol></blockquote></blockquote><h2 id='35-多处理器调度'><font color='cornflowerblue'><span>3.5. 多处理器调度</span></font></h2><blockquote><p>1️⃣<span>对称多CPU(SMP)：每个CPU都有自己调度方案，他们互斥访问</span><font color='red'><span>公共就绪队列</span></font><span>，领取进程执行</span></p><p>2️⃣<span>非对称多CPU(AMP)：只有一个CPU能管理OS资源，其余执行用户级任务，数据共享更容易</span></p><p><span>PS：进程从一个CPU到另一个CPU需要更新Cache所以开销大，SMP不允许进程迁移到另一个CPU</span></p></blockquote><h2 id='36-实时调度基于优先级抢占'><font color='cornflowerblue'><span>3.6. 实时调度：基于优先级+抢占</span></font></h2><blockquote><p>1️⃣<span>目的：完成实时任务()而分配CPU的调度方法</span></p><p>2️⃣<span>实时任务：硬实时(规定时间内必须执行完)+软实时(允许偶尔的延迟)</span></p><p>3️⃣<span>实现：基于优先级调度，任何时候实时进程优先级最高，调度延时小</span></p></blockquote></blockquote></div></div>
+</body>
+</html>

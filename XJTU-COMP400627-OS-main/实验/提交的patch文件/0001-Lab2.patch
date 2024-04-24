@@ -1,0 +1,388 @@
+From 195d028613f623f3a39abd9c7ee526cff456a4c2 Mon Sep 17 00:00:00 2001
+From: DUAN <134042675+DANNHIROAKI@users.noreply.github.com>
+Date: Sat, 2 Dec 2023 13:30:32 +0800
+Subject: [PATCH] Lab2
+
+---
+ 0001-Lab1.patch  | 154 +++++++++++++++++++++++++++++++++++++++++++++++
+ Makefile         |   1 +
+ kernel/defs.h    |   2 +
+ kernel/kalloc.c  |  15 +++++
+ kernel/proc.c    |  14 +++++
+ kernel/syscall.c |   2 +
+ kernel/syscall.h |  43 ++++++-------
+ kernel/sysproc.c |  21 +++++++
+ user/user.h      |   2 +
+ user/usys.pl     |   1 +
+ 10 files changed, 234 insertions(+), 21 deletions(-)
+ create mode 100644 0001-Lab1.patch
+
+diff --git a/0001-Lab1.patch b/0001-Lab1.patch
+new file mode 100644
+index 0000000..9efb5ab
+--- /dev/null
++++ b/0001-Lab1.patch
+@@ -0,0 +1,154 @@
++From e47fb962401463a072138995730c97276a0a6e8f Mon Sep 17 00:00:00 2001
++From: DUAN <134042675+DANNHIROAKI@users.noreply.github.com>
++Date: Sat, 2 Dec 2023 13:19:00 +0800
++Subject: [PATCH] Lab1
++
++---
++ Makefile     |  2 ++
++ user/find.c  | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++
++ user/sleep.c | 21 ++++++++++++
++ 3 files changed, 113 insertions(+)
++ create mode 100644 user/find.c
++ create mode 100644 user/sleep.c
++
++diff --git a/Makefile b/Makefile
++index 39a99d7..c4fedb0 100644
++--- a/Makefile
+++++ b/Makefile
++@@ -132,6 +132,8 @@ UPROGS=\
++ 	$U/_grind\
++ 	$U/_wc\
++ 	$U/_zombie\
+++	$U/_sleep\
+++    $U/_find\
++ 
++ fs.img: mkfs/mkfs README $(UPROGS)
++ 	mkfs/mkfs fs.img README $(UPROGS)
++diff --git a/user/find.c b/user/find.c
++new file mode 100644
++index 0000000..6faa525
++--- /dev/null
+++++ b/user/find.c
++@@ -0,0 +1,90 @@
+++#include "kernel/types.h"
+++#include "kernel/stat.h"
+++#include "kernel/fs.h"
+++#include "user/user.h"
+++
+++char* noSpace(char* dir)
+++{
+++static char newDir[DIRSIZ + 1];
+++int space = 0;
+++int buf = 0;
+++char* p = dir + strlen(dir) - 1;
+++while (p >= dir && *p == ' ') {
+++++space;
+++--p;
+++}
+++buf = DIRSIZ - space;
+++memmove(newDir, dir, buf);
+++newDir[buf] = 0;
+++return newDir;
+++}
+++
+++void find(char* dir, char* name)
+++{
+++char buf[512], *p;
+++int fd;
+++struct dirent de;
+++struct stat st;
+++
+++fd = open(dir, 0);
+++if (fd < 0) {
+++fprintf(2, "find: cannot open %s\n", dir);
+++return;
+++}
+++
+++if (fstat(fd, &st) < 0) {
+++fprintf(2, "find: cannot fstat %s\n", dir);
+++close(fd);
+++return;
+++}
+++
+++if (st.type == T_DEVICE || st.type == T_FILE) {
+++printf("find: not a directory value!\n");
+++close(fd);
+++} else if (st.type == T_DIR) {
+++if (strlen(dir) + 1 + DIRSIZ + 1 > sizeof buf) {
+++   printf("ls: path too long\n");
+++} else {
+++   strcpy(buf, dir);
+++   p = buf + strlen(buf);
+++   *p++ = '/';
+++   for (int readBytes = read(fd, &de, sizeof(de)); readBytes == sizeof de; readBytes = read(fd, &de, sizeof(de))) {
+++       if (de.inum == 0)
+++           continue;
+++       if (strcmp(".", noSpace(de.name)) == 0 || strcmp("..", noSpace(de.name)) == 0) {
+++           continue;
+++       }
+++       memmove(p, de.name, DIRSIZ);
+++       p[DIRSIZ] = 0;
+++       if (stat(buf, &st) < 0) {
+++           printf("find: cannot stat '%s'\n", buf);
+++           continue;
+++       }
+++       switch (st.type) {
+++           case T_DIR:
+++               find(buf, name);
+++               break;
+++           default:
+++               if (strcmp(name, noSpace(de.name)) == 0) {
+++                   printf("%s\n", buf);
+++               }
+++               break;
+++       }
+++   }
+++}
+++}
+++close(fd);
+++}
+++
+++int main(int argc, char* argv[])
+++{
+++switch (argc) {
+++case 3:
+++   find(argv[1], argv[2]);
+++   break;
+++default:
+++   printf("Wrong directory or file name!\n");
+++   break;
+++}
+++exit(0);
+++}
++\ No newline at end of file
++diff --git a/user/sleep.c b/user/sleep.c
++new file mode 100644
++index 0000000..eac0768
++--- /dev/null
+++++ b/user/sleep.c
++@@ -0,0 +1,21 @@
+++#include "kernel/types.h"
+++#include "user/user.h"
+++
+++int main(int argc, char *argv[])
+++{
+++switch (argc) {
+++case 2:
+++// 当参数数量正确时
+++int time = atoi(argv[1]);
+++if (sleep(time) != 0) {
+++   printf("Error!\n");
+++}
+++break;
+++
+++default:
+++// 当参数数量不正确时
+++printf("You should input sleep times!\n");
+++}
+++
+++exit(0);
+++}
++\ No newline at end of file
++-- 
++2.34.1.windows.1
++
+diff --git a/Makefile b/Makefile
+index c4fedb0..cc56a82 100644
+--- a/Makefile
++++ b/Makefile
+@@ -134,6 +134,7 @@ UPROGS=\
+ 	$U/_zombie\
+ 	$U/_sleep\
+     $U/_find\
++	$U/_sysinfotest\
+ 
+ fs.img: mkfs/mkfs README $(UPROGS)
+ 	mkfs/mkfs fs.img README $(UPROGS)
+diff --git a/kernel/defs.h b/kernel/defs.h
+index a3c962b..7229d7d 100644
+--- a/kernel/defs.h
++++ b/kernel/defs.h
+@@ -63,6 +63,7 @@ void            ramdiskrw(struct buf*);
+ void*           kalloc(void);
+ void            kfree(void *);
+ void            kinit(void);
++uint64          freememcnt(void);
+ 
+ // log.c
+ void            initlog(int, struct superblock*);
+@@ -106,6 +107,7 @@ void            yield(void);
+ int             either_copyout(int user_dst, uint64 dst, void *src, uint64 len);
+ int             either_copyin(void *dst, int user_src, uint64 src, uint64 len);
+ void            procdump(void);
++int             proccnt(void);
+ 
+ // swtch.S
+ void            swtch(struct context*, struct context*);
+diff --git a/kernel/kalloc.c b/kernel/kalloc.c
+index 0699e7e..4749500 100644
+--- a/kernel/kalloc.c
++++ b/kernel/kalloc.c
+@@ -80,3 +80,18 @@ kalloc(void)
+     memset((char*)r, 5, PGSIZE); // fill with junk
+   return (void*)r;
+ }
++
++uint64 freememcnt(void)
++{
++struct run* r;
++uint64 freemem = 0;
++acquire(&kmem.lock);
++r = kmem.freelist;
++while(r)
++{
++ freemem++;
++ r = r->next;
++}
++release(&kmem.lock);
++return freemem*4096;
++}
+\ No newline at end of file
+diff --git a/kernel/proc.c b/kernel/proc.c
+index 959b778..b294709 100644
+--- a/kernel/proc.c
++++ b/kernel/proc.c
+@@ -681,3 +681,17 @@ procdump(void)
+     printf("\n");
+   }
+ }
++
++int proccnt(void)
++{
++int nproc = 0;
++struct proc* p;
++for (p=proc;p<&proc[NPROC];p++)
++{
++ if (p->state != UNUSED)
++ {
++   nproc++;
++ }
++}
++return nproc;
++}
+diff --git a/kernel/syscall.c b/kernel/syscall.c
+index ed65409..6a71b9e 100644
+--- a/kernel/syscall.c
++++ b/kernel/syscall.c
+@@ -101,6 +101,7 @@ extern uint64 sys_unlink(void);
+ extern uint64 sys_link(void);
+ extern uint64 sys_mkdir(void);
+ extern uint64 sys_close(void);
++extern uint64 sys_sysinfo(void);
+ 
+ // An array mapping syscall numbers from syscall.h
+ // to the function that handles the system call.
+@@ -126,6 +127,7 @@ static uint64 (*syscalls[])(void) = {
+ [SYS_link]    sys_link,
+ [SYS_mkdir]   sys_mkdir,
+ [SYS_close]   sys_close,
++[SYS_sysinfo] sys_sysinfo,
+ };
+ 
+ void
+diff --git a/kernel/syscall.h b/kernel/syscall.h
+index bc5f356..e763c21 100644
+--- a/kernel/syscall.h
++++ b/kernel/syscall.h
+@@ -1,22 +1,23 @@
+ // System call numbers
+-#define SYS_fork    1
+-#define SYS_exit    2
+-#define SYS_wait    3
+-#define SYS_pipe    4
+-#define SYS_read    5
+-#define SYS_kill    6
+-#define SYS_exec    7
+-#define SYS_fstat   8
+-#define SYS_chdir   9
+-#define SYS_dup    10
+-#define SYS_getpid 11
+-#define SYS_sbrk   12
+-#define SYS_sleep  13
+-#define SYS_uptime 14
+-#define SYS_open   15
+-#define SYS_write  16
+-#define SYS_mknod  17
+-#define SYS_unlink 18
+-#define SYS_link   19
+-#define SYS_mkdir  20
+-#define SYS_close  21
++#define SYS_fork     1
++#define SYS_exit     2
++#define SYS_wait     3
++#define SYS_pipe     4
++#define SYS_read     5
++#define SYS_kill     6
++#define SYS_exec     7
++#define SYS_fstat    8
++#define SYS_chdir    9
++#define SYS_dup     10
++#define SYS_getpid  11
++#define SYS_sbrk    12
++#define SYS_sleep   13
++#define SYS_uptime  14
++#define SYS_open    15
++#define SYS_write   16
++#define SYS_mknod   17
++#define SYS_unlink  18
++#define SYS_link    19
++#define SYS_mkdir   20
++#define SYS_close   21
++#define SYS_sysinfo 22
+diff --git a/kernel/sysproc.c b/kernel/sysproc.c
+index 1de184e..241c717 100644
+--- a/kernel/sysproc.c
++++ b/kernel/sysproc.c
+@@ -5,6 +5,7 @@
+ #include "memlayout.h"
+ #include "spinlock.h"
+ #include "proc.h"
++#include "sysinfo.h"
+ 
+ uint64
+ sys_exit(void)
+@@ -89,3 +90,23 @@ sys_uptime(void)
+   release(&tickslock);
+   return xticks;
+ }
++
++uint64 sys_sysinfo(void)
++{
++uint64 si_addr;
++argaddr(0, &si_addr);
++
++struct sysinfo systeminfo;
++systeminfo.freemem = freememcnt();
++systeminfo.nproc = proccnt();
++
++struct proc* p = myproc();
++
++int copyResult = copyout(p->pagetable, si_addr, (char*)&systeminfo, sizeof(systeminfo));
++switch (copyResult) {
++ case -1:
++   return -1;
++ default:
++   return 0;
++}
++}
+\ No newline at end of file
+diff --git a/user/user.h b/user/user.h
+index 4d398d5..09985e2 100644
+--- a/user/user.h
++++ b/user/user.h
+@@ -22,6 +22,8 @@ int getpid(void);
+ char* sbrk(int);
+ int sleep(int);
+ int uptime(void);
++struct sysinfo;
++int sysinfo(struct sysinfo*);
+ 
+ // ulib.c
+ int stat(const char*, struct stat*);
+diff --git a/user/usys.pl b/user/usys.pl
+index 01e426e..4f1f768 100755
+--- a/user/usys.pl
++++ b/user/usys.pl
+@@ -36,3 +36,4 @@ entry("getpid");
+ entry("sbrk");
+ entry("sleep");
+ entry("uptime");
++entry("sysinfo");
+-- 
+2.34.1.windows.1
+

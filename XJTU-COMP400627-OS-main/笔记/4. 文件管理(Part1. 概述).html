@@ -1,0 +1,747 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>4. 文件管理(Part1. 概述)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='文件管理'><span>文件管理</span></h1><h1 id='1-文件系统-信息的组织存储访问'><font color='cornflowerblue'><span>1. 文件系统: 信息的组织/存储/访问</span></font></h1><blockquote><h2 id='11-文件'><font color='cornflowerblue'><span>1.1. 文件</span></font></h2><blockquote><h3 id='111-文件的概念'><font color='cornflowerblue'><span>1.1.1. 文件的概念</span></font></h3><blockquote><p>1️⃣<span>文件的含义：具有一定功能的程序/数据集合，通过文件名(用户访问接口)访问</span></p><p>2️⃣<span>文件逻辑分类</span></p><ol start='' ><li><p><span>流文件：中是指文件内信息不再划分单位，只是一串字符流，如exe文件</span></p></li><li><p><span>记录文件：按逻辑把文件独立划分位多个信息单位(aka记录，可定长/不定长)，每个记录都有数据项</span></p></li></ol><p>2️⃣<span>文件的组成结构</span></p><ol start='' ><li><p><span>数据项：基本数据项(文件系统中最小/不可分的原子数据单位)+组合数据项(多个基本数据项)</span></p></li><li><p><span>记录：描述对象某方面的属性</span></p></li><li><p><span>文件：创建者定义的有关数据项集合，分为有结构/记录式文件+无结构/流式文件</span></p></li></ol><p><span>举个例子：张三(基本数据项)→张三+18岁(组合数据项)→张三的所有有关属性(记录)→有结构文件(张三李四王五构成的学生信息文件)</span></p></blockquote><h3 id='112-文件的属性'><font color='cornflowerblue'><span>1.1.2. 文件的属性</span></font></h3><blockquote><p>1️⃣<span>内容：名称(唯一)+标识符+文件类型+文件位置+其他(文件大小/建立时间/用户标识)</span></p><p><span>PS1: 标识符——OS层面文件的唯一标签，对用户透明</span></p><p><span>PS2: 文件位置——指向文件的指针</span></p><p>2️⃣<span>属性信息，放在目录中，存储在硬盘中</span></p></blockquote><h3 id='113-文件的分类'><font color='cornflowerblue'><span>1.1.3. 文件的分类</span></font></h3><blockquote><p>1️⃣<span>按用途：系统文件(只允许用户调用)+库文件(只允许用户调用)+用户文件(所有者/授权用户访问)</span></p><p>2️⃣<span>按保护级别：只读+读写+执行文件(读/写/执行是三种分立的操作)+不保护文件(随你怎么搞)</span></p><p>3️⃣<span>按流向：输入文件(如光盘/键盘中的文件)+输出文件(如打印机上的文件)+IO文件(磁盘)</span></p><p>4️⃣<span>按数据形式：源文件(你写的代码文本&amp;数据)+目标文件(源文件编译后)+可执行文件(编译后再链接)</span></p></blockquote><h3 id='114-文件的操作'><font color='cornflowerblue'><span>1.1.4. 文件的操作</span></font></h3><blockquote><h4 id='1141-基本操作'><font color='cornflowerblue'><span>1.1.4.1. 基本操作</span></font></h4><blockquote><p>1️⃣<span>创建文件：分配空间+目录中建立目录项+建立新的FCB，返回一个文件描述符</span></p><p>2️⃣<span>删除文件：先删除目录项+回收存储空间</span></p><p>3️⃣<span>读/写：查找目录→找到指定目录项→得到被读/要写文件的外存地址(指针)→开始读写</span></p><p>4️⃣<span>截断文件：将文件缩减到指定大小，但保留文件属性</span></p><p>5️⃣<span>设置文件读写位置：其实就是调整文件指针，让读写不再从头开始</span></p></blockquote><h4 id='1142-打开关闭文件'><font color='cornflowerblue'><span>1.1.4.2. 打开/关闭文件</span></font></h4><blockquote><p>1️⃣<span>打开文件</span></p><ol start='' ><li><p><span>OS把文件属性复制到内存，给用户返回一个索引</span></p></li><li><p><span>用户通过这个索引向OS请求操作(打开)这个文件</span></p></li></ol><p>2️⃣<span>关闭文件</span></p><ol start='' ><li><p><span>撤销之前建立的索引信息，切断用户与该文件的联系</span></p></li><li><p><span>若文件打开期间修改了，则将其写回外存</span></p></li></ol></blockquote></blockquote></blockquote><h2 id='12-文件的逻辑结构用户对文件的组织'><font color='cornflowerblue'><span>1.2. 文件的逻辑结构：用户对文件的组织</span></font></h2><blockquote><h3 id='121-概述'><font color='cornflowerblue'><span>1.2.1. 概述</span></font></h3><blockquote><p>1️⃣<span>含义：用户所观察到&amp;处理的文件组织形式</span></p><p>2️⃣<span>分类：有结构的记录文件(顺序/索引/索引顺序)+无结构的流文件</span></p><p>3️⃣<span>文件访问方式</span></p><ol start='' ><li><p><span>顺序访问：按文件逻辑顺序依次存取</span></p></li><li><p><span>随机存取：根据记录编号直接存取文件中的任意一个记录(可忽略前面的)</span></p></li></ol></blockquote><h3 id='122-有结构文件分类由os程序决定'><font color='cornflowerblue'><span>1.2.2. 有结构文件分类：由OS/程序决定</span></font></h3><blockquote><h4 id='1221-顺序文件连续结构'><font color='cornflowerblue'><span>1.2.2.1. 顺序文件/连续结构</span></font></h4><blockquote><p>1️⃣<span>含义：将逻辑文件信息连续存放</span></p><p>2️⃣<span>分类：定成/不定长(记录长度是否固定)+串结构(记录顺序不按关键字排)/顺序结构(按关键字)</span></p><p>3️⃣<span>优缺点：</span><font color="red"><span>常用于批量记录读取</span></font><span> ，访问某个记录请求性能不佳，会有碎片/无法动态扩充</span></p></blockquote><h4 id='1222-索引文件好比一个目录'><font color='cornflowerblue'><span>1.2.2.2. 索引文件(好比一个目录)</span></font></h4><blockquote><p>1️⃣<span>索引表：</span></p><ol start='' ><li><p><span>存储逻辑文件记录信息的表，其本身就是一个定长文件</span></p></li><li><p><span>每个表目指出一个文件记录在逻辑文件中的位置+长度</span></p></li></ol><p>2️⃣<span>索引文件：索引表+逻辑文件</span></p><p>3️⃣<span>优缺点：随机访问(而不是从头开始)/删除修改添加高效；索引表本身占空间/查找策略影响大</span></p></blockquote><h4 id='1223-索引顺序文件'><font color='cornflowerblue'><span>1.2.2.3. 索引顺序文件</span></font></h4><blockquote><p>1️⃣<span>含义：将顺序文件中所有记录分组，每组第一个记录在索引表有索引项(关键字+该记录的指针)</span></p><p><img src="https://s2.loli.net/2023/11/11/OfEKmQFd8y2s5nZ.png" alt="image-20231111161111346" style="zoom: 33%;" /><span> </span></p><p>2️⃣<span>检索操作：根据关键字检索索引表→找到组中第一个记录→顺序查找改组直到找到记录</span></p><p>3️⃣<span>优缺点：存取快，担任有额外存储开销(索引表)</span></p></blockquote><h4 id='1224-直接文件散列hash文件'><font color='orange'><span>1.2.2.4. 直接文件(散列HASH文件)</span></font></h4><blockquote><p>1️⃣<span>直接文件：由关键字值找到记录的物理地址</span></p><p>2️⃣<span>散列文件：典型直接文件，关键字</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="9.251ex" height="3.262ex" role="img" focusable="false" viewBox="0 -1359.7 4089 1441.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-5-TEX-S4-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-5-TEX-S4-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-5-TEX-I-1D43B" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-5-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><path id="MJX-5-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-5-TEX-S4-2192" transform="translate(3089,0)"></use><svg width="3189" height="865" x="0" y="-182" viewBox="797.3 -182 3189 865"><use data-c="2212" xlink:href="#MJX-5-TEX-S4-2212" transform="scale(6.149,1)"></use></svg></g></g><g data-mml-node="mpadded" transform="translate(0,870.8) scale(0.707)"><g transform="translate(278,-200)"><g data-mml-node="mi"><use data-c="1D43B" xlink:href="#MJX-5-TEX-I-1D43B"></use></g><g data-mml-node="mi" transform="translate(888,0)"><use data-c="1D434" xlink:href="#MJX-5-TEX-I-1D434"></use></g><g data-mml-node="mi" transform="translate(1638,0)"><use data-c="1D446" xlink:href="#MJX-5-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(2283,0)"><use data-c="1D43B" xlink:href="#MJX-5-TEX-I-1D43B"></use></g><g data-mml-node="mtext" transform="translate(3171,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">函</text></g><g data-mml-node="mtext" transform="translate(4055,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mspace" transform="translate(4949.8,0)"></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">→</mo></mstyle><mpadded width="+0.833em" lspace="0.278em" voffset="-.2em" height="-.2em"><mi>H</mi><mi>A</mi><mi>S</mi><mi>H</mi><mtext>函</mtext><mtext>数</mtext><mspace depth=".25em"></mspace></mpadded></mover></math></mjx-assistive-mml></mjx-container><script type="math/tex">\xrightarrow{HASH函数}</script><span>物理地址，存取快但是有冲突</span></p></blockquote></blockquote></blockquote><h2 id='13-物理结构文件在外存的存储结构'><font color='cornflowerblue'><span>1.3. 物理结构：文件在外存的存储结构</span></font></h2><blockquote><h3 id='131-概述'><font color='cornflowerblue'><span>1.3.1. 概述</span></font></h3><blockquote><p>1️⃣<span>用户按逻辑结构使用文件</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="3.93ex" height="3.262ex" role="img" focusable="false" viewBox="0 -1359.7 1737 1441.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-6-TEX-S4-2190" d="M944 261T944 250T929 230H165Q167 228 182 216T211 189T244 152T277 96T303 25Q308 7 308 0Q308 -11 288 -11Q281 -11 278 -11T272 -7T267 2T263 21Q245 94 195 151T73 236Q58 242 55 247Q55 254 59 257T73 264Q121 283 158 314T215 375T247 434T264 480L267 497Q269 503 270 505T275 509T288 511Q308 511 308 500Q308 493 303 475Q293 438 278 406T246 352T215 315T185 287T165 270H929Q944 261 944 250Z"></path><path id="MJX-6-TEX-S4-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2190" xlink:href="#MJX-6-TEX-S4-2190"></use><use data-c="2192" xlink:href="#MJX-6-TEX-S4-2192" transform="translate(737,0)"></use></g></g><g data-mml-node="mpadded" transform="translate(0,870.8) scale(0.707)"><g transform="translate(333,-200)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">转</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">换</text></g><g data-mml-node="mspace" transform="translate(1789.5,0)"></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">↔</mo></mstyle><mpadded width="+0.667em" lspace="0.333em" voffset="-.2em" height="-.2em"><mtext>转</mtext><mtext>换</mtext><mspace depth=".25em"></mspace></mpadded></mover></math></mjx-assistive-mml></mjx-container><script type="math/tex">\xleftrightarrow{转换}</script><span>文件系统按物理结构管理文件</span></p><p>2️⃣<span>含义：</span><strong><span>文件在外存的存放组织形式</span></strong></p><p>3️⃣<span>物理结构的类型：取决于外存方式——连续/链接/缩引分配</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="2.058ex" role="img" focusable="false" viewBox="0 -898.8 1000 909.8" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-7-TEX-N-2194" d="M263 479Q267 501 271 506T288 511Q308 511 308 500Q308 493 303 475Q293 438 278 406T246 352T215 315T185 287T165 270H835Q729 349 696 475Q691 493 691 500Q691 511 711 511Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H165Q167 228 182 216T211 189T244 152T277 96T303 25Q308 7 308 0Q308 -11 288 -11Q281 -11 278 -11T272 -7T267 2T263 21Q245 94 195 151T73 236Q58 242 55 247Q55 254 59 257T73 264Q144 292 194 349T263 479Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2194" xlink:href="#MJX-7-TEX-N-2194"></use></g></g><g data-mml-node="mpadded" transform="translate(264.2,798.8) scale(0.707)"><g transform="translate(333,-200)"><g data-mml-node="mspace"></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">↔</mo></mstyle><mpadded width="+0.667em" lspace="0.333em" voffset="-.2em" height="-.2em"><mspace depth=".25em"></mspace></mpadded></mover></math></mjx-assistive-mml></mjx-container><script type="math/tex">\xleftrightarrow{}</script><span>连续/链接/缩引结构</span></p><p>4️⃣<span>文件存取方式：取决于存储设备特性(磁带是顺序存取，磁盘是直接存取)</span></p><p>5️⃣<span>物理块与逻辑记录</span></p><ol start='' ><li><p><span>物理块大小固定，逻辑记录大小可变，一个逻辑记录可只占物理块一部分也可跨越多个物理块</span></p></li><li><p><span>逻辑块：OS会将文件信息分为与物理块大小相等的逻辑块</span></p></li></ol></blockquote><h3 id='132-连续链接缩引分配见23-文件在存储器的实现'><font color='cornflowerblue'><span>1.3.2. 连续/链接/缩引分配：见2.3. 文件(在存储器的)实现</span></font></h3></blockquote><h2 id='14-目录结构'><font color='cornflowerblue'><span>1.4. 目录结构</span></font></h2><blockquote><h3 id='141-文件控制块fcb'><font color='cornflowerblue'><span>1.4.1. 文件控制块(FCB)</span></font></h3><blockquote><p>1️⃣<span>文件=FCB+文件体</span></p><p>2️⃣<span>含义：用于描述和控制文件的数据结构</span></p><p>3️⃣<span>内容：至少有文件名+文件物理地址，此外还有——</span></p><ol start='' ><li><p><span>文件结构：物理的(顺序/索引/索引)，逻辑的(记录/流)</span></p></li><li><p><span>文件物理位置：存放设备名+存储位置+文件长度</span></p></li><li><p><span>存取控制信息：存取权限，分为文件主or其他用户</span></p></li><li><p><span>管理信息：文件建立/上次存取日期，当前使用状态，共享计数</span></p></li></ol></blockquote><h3 id='142-索引结点'><font color='orange'><span>1.4.2. 索引结点</span></font></h3><blockquote><p>1️⃣<span>含义：将文件名和文件描述分开→文件名+索引结点(包含文件描述)</span></p><p>2️⃣<span>存储特点：索引结点在外存，文件名+索引结点指针在内存(FCB)</span></p><p>3️⃣<span>磁盘索引结点内容</span></p><p><span>文件的：主标识+类型+存取权限+物理地址+长度+链接计数+存取时间</span></p><ol start='' ><li><p><span>文件主标识：标识了文件大小/小组的标识符</span></p></li><li><p><span>文件链接计数：文件系统中指向该文件名的指针数</span></p></li></ol><p>4️⃣<span>内存索引结点：打开文件时，磁盘索引结点</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="4.178ex" height="3.262ex" role="img" focusable="false" viewBox="0 -1359.7 1846.8 1441.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-8-TEX-S4-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-8-TEX-S4-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-8-TEX-S4-2192" transform="translate(846.8,0)"></use><svg width="946.8" height="865" x="0" y="-182" viewBox="236.7 -182 946.8 865"><use data-c="2212" xlink:href="#MJX-8-TEX-S4-2212" transform="scale(1.825,1)"></use></svg></g></g><g data-mml-node="mpadded" transform="translate(0,870.8) scale(0.707)"><g transform="translate(278,-200)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">复</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">制</text></g><g data-mml-node="mspace" transform="translate(1778.8,0)"></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">→</mo></mstyle><mpadded width="+0.833em" lspace="0.278em" voffset="-.2em" height="-.2em"><mtext>复</mtext><mtext>制</mtext><mspace depth=".25em"></mspace></mpadded></mover></math></mjx-assistive-mml></mjx-container><script type="math/tex">\xrightarrow{复制}</script><span>内存索引结点，有如下新增内容</span></p><ol start='' ><li><p><span>索引结点编号：标识内存索引结点</span></p></li><li><p><span>状态：标识该节点是否上锁/修改</span></p></li><li><p><span>访问计数：正在访问该文件的进程数</span></p></li><li><p><span>逻辑设备号：文件所在文件系统的逻辑设备号</span></p></li><li><p><span>链接指针：指向空链表/散列队列的指针</span></p></li></ol></blockquote><h3 id='143-目录文件文件目录'><font color='cornflowerblue'><span>1.4.3. 目录文件&amp;文件目录</span></font></h3><blockquote><p>1️⃣<span>文件目录：FCB的有序集合</span></p><ol start='' ><li><p><span>用途：检索文件，实现按名存取，防止冲突 </span></p></li><li><p><span>目录项：就是FCB</span></p></li><li><p><span>目录结构会影响到：文件存取速度/共享性/安全性</span></p></li></ol><p>2️⃣<span>目录文件：文件目录以文件形式保存在外存，这个文件就叫目录文件</span></p><p>3️⃣<span>目录操作：建立/寻找/删除一个文件，列出目录列表，重命名文件，遍历文件系统</span></p></blockquote><h3 id='144-目录类型'><font color='cornflowerblue'><span>1.4.4. 目录类型</span></font></h3><blockquote><h4 id='1441-单级目录结构仅一表每个文件占一表项'><font color='cornflowerblue'><span>1.4.4.1. 单级目录结构：仅一表，每个文件占一表项</span></font></h4><blockquote><p><img src="https://s2.loli.net/2023/11/11/oFqAUQw27IxJPkN.png" alt="image-20211222195413258" style="zoom:50%;" /><span> </span></p><p>1️⃣<span>动态操作</span></p><ol start='' ><li><p><span>建立文件：验证不重名后→找出一个空表目然后将信息填入</span></p></li><li><p><span>删除文件：找到对应目录项→找到物理地址→回收物理空间→回收目录项</span></p></li><li><p><span>访问文件：检索到文件名→找出物理地址→然后操作文件</span></p></li></ol><p>2️⃣<span>缺点：只有一个目录，不允许文件重名，查找慢</span></p></blockquote><h4 id='1442-二级目录'><font color='cornflowerblue'><span>1.4.4.2. 二级目录</span></font></h4><blockquote><p>1️⃣<span>结构：主文件目录+用户文件目录</span></p><p><img src="https://s2.loli.net/2023/11/11/EHiQcBzeh79Grd5.png" alt="image-20211222195549196" style="zoom:60%;" /><span> </span></p><ol start='' ><li><p><span>主文件目录MFD：给出用户名+用户子目录指针</span></p></li><li><p><span>用户子目录UFD：给出用户所有文件的FCB</span></p></li></ol><p>2️⃣<span>动态操作</span></p><ol start='' ><li><p><span>访问：主目录中查找用户名→进入用户目录查找文件名→得到物理地址</span></p></li><li><p><span>新用户建立文件：主目录中建立表目→给新用户目录分配空间→用户目录中添加表目→填入信息</span></p></li><li><p><span>删除：直接删用户目录的目录项，用户目录为空就把主目录对应项删除</span></p></li></ol><p>5️⃣<span>优劣：文件可重名，查找块，但灵活性差，不利于共享</span></p></blockquote><h4 id='1443-树形多级目录结构'><font color='cornflowerblue'><span>1.4.4.3. 树形(多级)目录结构</span></font></h4><blockquote><p><img src="https://s2.loli.net/2023/11/11/BMbwRZ9DVSkyuNU.png" alt="image-20211222195800206" style="zoom:50%;" /><span>  </span></p><p>1️⃣<span>结构：根目录=第一级的目录，非叶结点=均为目录文件(子目录)，叶=文件(每个文件都有唯一内部标识)</span></p><p>2️⃣<span>有关概念</span></p><ol start='' ><li><p><span>路径名：一个字符串，文件的唯一标识，按照</span><code>\</code><span>级联，分文绝对(根目录开始)+相对目录</span></p></li><li><p><span>当前目录(工作目录)：选取某目录为当前目录，进程访问文件都是以这个目录为对照</span></p><p><span>PS: 某目录的上一级用</span><code>..</code><span>标识</span></p></li></ol><p>3️⃣<span>优劣：可重名/检索快/有利于分类，查找文件要多次访问目录文件(在外存)</span></p></blockquote><h4 id='1444-无环图形目录相比树形更便于共享'><font color='cornflowerblue'><span>1.4.4.4. (无环)图形目录：相比树形更便于共享</span></font></h4><blockquote><p><img src="https://s2.loli.net/2023/11/11/LGCrPFHXT5Ro1Bj.png" alt="image-20231030215013322" style="zoom:67%;" /><span> </span></p><p>1️⃣<span>结构：树形目录+指向同一结点的有向边</span></p><p>2️⃣<span>共享计数器：</span></p><ol start='' ><li><p><span>向该节点增/减共享链时计数器+1/-1，同时增/减指针</span></p></li><li><p><span>当共享计数器为0时结点才算真正删除，删除文件本身</span></p></li></ol></blockquote></blockquote><h3 id='145-文件目录改进分解fcb为两部分'><span>1.4.5. 文件目录改进：分解FCB为两部分</span></h3><blockquote><p>1️⃣<span>符号文件目录：文件名+文件内部标识→树状结构，按文件名排序</span></p><p>2️⃣<span>基本文件目录：其余文件说明信息→线性结构，按文件内部标识排序</span></p><p><span>可以加快检索</span></p></blockquote></blockquote><h2 id='15-文件共享不同用户使用一个文件'><font color='cornflowerblue'><span>1.5. 文件共享：不同用户使用一个文件</span></font></h2><blockquote><p><span>核心问题：如何实现共享+共享用户的存取控制</span></p><h3 id='151-基于索引结点的共享硬链接'><font color='cornflowerblue'><span>1.5.1. 基于索引结点的共享(硬链接)</span></font></h3><blockquote><p>1️⃣<span>两个/多个目录项指向相同索引结点</span></p><p>2️⃣<span>索引结点有一计数器，统计其对应目录项个数(为1时才可删除节点，大于1时只减1)</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231031001337259.png" alt="image-20231031001337259" style="zoom:67%;" /><span> </span></p></blockquote><h3 id='152-利用符号链实现文件共享软链接'><font color='cornflowerblue'><span>1.5.2. 利用符号链实现文件共享(软链接)</span></font></h3><blockquote><p><img src="https://s2.loli.net/2023/11/11/FR1iuBD2abVYH5e.png" alt="image-20231031001502707" style="zoom:67%;" /><span> </span></p><p>1️⃣<span>符号链接(link类型文件)：包含被链接(共享)文件的</span><strong><span>路径名</span></strong></p><p>2️⃣<span>链接和指针：文件拥有者才拥有指针+其他用户路径名，共享给的用户只拥有链接(路径名)</span></p><p>3️⃣<span>动态操作：将C的文件，共享给用户</span></p><ol start='' ><li><p><span>共享：B目录中，建立符号链接指向文件 C</span></p></li><li><p><span>访问：检索目录，若检索到的是链接，OS自动忽略</span></p></li></ol></blockquote></blockquote><h2 id='16-文件保护'><font color='orange'><span>1.6. 文件保护</span></font></h2><blockquote><p>1️⃣<span>限制文件访问类型：读/写/执行/添加/删除/列出属性/重命名/复制/粘贴</span></p><p>2️⃣<span>针对不同用户访问控制</span></p><ol start='' ><li><p><span>含义：不同权限用户访问同一文件，采取不同访问类型</span></p></li><li><p><span>方式：访问控制矩阵/访问控制表/用户权限表(用数据结构记录用户的操作权限)+口令密码</span></p></li></ol></blockquote></blockquote><h1 id='2-文件系统的实现'><font color='cornflowerblue'><span>2. 文件系统的实现</span></font></h1><blockquote><h2 id='21-文件系统概述'><font color='cornflowerblue'><span>2.1. 文件系统概述</span></font></h2><blockquote><h3 id='211-文件系统概念'><font color='cornflowerblue'><span>2.1.1. 文件系统概念</span></font></h3><blockquote><p>1️⃣<span>定义：OS中，(以文件方式)管理软件资源的软件+被管理的文件+被管理的数据结构</span></p><p>2️⃣<span>文件系统的作用</span></p><ol start='' ><li><p><span>OS角度的文件系统：</span><strong><span>对存储文件的空间</span></strong><span>组织/分配/回收，</span><strong><span>对文件</span></strong><span>存储/检索/共享/保护</span></p></li><li><p><span>用户角度的文件系统：实现按名存取(用户知道文件名就可以获取文件信息)</span></p></li></ol></blockquote><h3 id='212-层次结构'><font color='cornflowerblue'><span>2.1.2. 层次结构</span></font></h3><blockquote><p><img src="https://s2.loli.net/2023/11/11/PnwOjm7QteNY4rU.png" alt="image-20231031113206475" style="zoom:67%;" /><span>  </span></p><p>1️⃣<span>用户接口：图形窗口/命令行→连接现实与虚拟，用户通过用户接口向OS发出文件操作命令</span></p><p>2️⃣<span>文件目录系统：查找目录，找到文件F索引信息</span></p><p>3️⃣<span>存取控制验证：即使有索引信息，也要看你有无访问权</span></p><p>4️⃣<span>逻辑文件系统与文件信息缓冲区：确定拥有访问权后，先找到逻辑地址</span></p><p>5️⃣<span>物理文件系统：再由逻辑地址找到物理地址，这一层分为外存分配管理+设备管理</span></p></blockquote></blockquote><h2 id='22-目录的实现'><font color='orange'><span>2.2. 目录的实现</span></font></h2><blockquote><p>1️⃣<span>线性表：按顺序存放文件信息(文件名+数据块)，创建删除文件就是线性表的插入和删除，创建是还要遍历检查文件是否已存在(因此低效)</span></p><p>2️⃣<span>散列表：(查找/删除时)将HASH函数将文件名转化为数字，用这个数字找到文件信息位置。但需要一个好的冲突解决策略</span></p></blockquote><h2 id='23-文件在存储器的实现文件的物理结构'><font color='cornflowerblue'><span>2.3. 文件在存储器的实现(文件的物理结构)</span></font></h2><blockquote><h3 id='231-外存分配方式-如何为文件分配磁盘'><font color='cornflowerblue'><span>2.3.1. 外存分配方式: 如何为文件分配磁盘</span></font></h3><blockquote><h4 id='2311-顺序分配文件分配连续的磁盘区域'><font color='cornflowerblue'><span>2.3.1.1. 顺序分配：文件分配连续的磁盘区域</span></font></h4><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231031124445960.png" alt="image-20231031124445960" style="zoom: 50%;" /><span> </span></p><p>1️⃣<span>文件创建过程：用户进程说明文件所需空间，OS查找空闲区管理表，若有足够空间就为文件分配，否则等待</span></p><p>2️⃣<span>结构：逻辑相邻可以是物理相邻</span></p><p>3️⃣<span>优劣：查找快，但是会产生外碎片，不适合文件大小动态变化</span></p></blockquote><h4 id='2312链接分配'><font color='cornflowerblue'><span>2.3.1.2.链接分配</span></font></h4><blockquote><p><img src="https://s2.loli.net/2023/11/11/rojeH6BPNZdimTI.png" alt="image-20231031130544970" style="zoom:60%;" /><span> </span></p><p>1️⃣<span>隐式链接：</span></p><ol start='' ><li><p><span>含义：文件信息再若干不连续块中，每个块都指向文件的下一块，读文件只需找到第一块</span></p></li><li><p><span>缺点：</span><mark><span>存取速度慢(不适于随机存取)</span></mark><span>，可靠性差(一个指针烂了后面都没用了)</span></p></li></ol><p>2️⃣<span>显式连接：所有指针被放在</span><strong><span>文件分配表FAT</span></strong><span>(整个磁盘只有一张)，列出了所有块及其位置。缺点是仍需从表顶开始找</span></p></blockquote><h4 id='2313-索引分配'><font color='cornflowerblue'><span>2.3.1.3. 索引分配</span></font></h4><blockquote><p><img src="https://s2.loli.net/2023/11/11/NYsicdgPxLntw3e.png" alt="image-20211111154450144" style="zoom: 50%;" /><span> </span></p><p>1️⃣<span>结构：每个文件分配一个索引块，块中放索引表，表中每个表项分给该文件一个物理块</span></p><p><span>PS：索引表——本质上是磁盘块地址数组，其中第i个条目指向文件第i块</span></p><p>2️⃣<span>优点：能够随机存取，无外碎片</span></p><p>3️⃣<span>缺点：索引块占空间(其大小也很重要)，存取需要两次访问(但可在访问文件前就把索引表调入内存)</span></p><p>4️⃣<span>多级索引表：如果文件很大索引表也会很大，大到超过一块时，可以把索引表当作文件再为其建立索引表</span></p></blockquote><h4 id='2314-番外多级索引分配补档'><font color='cornflowerblue'><span>2.3.1.4. 番外：多级索引分配补档</span></font></h4><blockquote><p>1️⃣<span>单级索引分配：文件名为test，索引表放在19块中，索引表指出的文件结构(块序)为9,16,1,10</span></p><p><img src="https://s2.loli.net/2023/11/11/Cwut59FTHqzZg8s.png" alt="image-20231031153326763" style="zoom:67%;" /><span> </span></p><p>2️⃣<span>两级索引分配：文件名test，索引到主索引的块号(每块含有二级索引块号)，又索引到第二级索引块号(每块包含文件块号序列)，索引到文件块号</span></p><p><img src="https://s2.loli.net/2023/11/11/Lku35Hc7yOtGRIr.png" alt="image-20231031153834804" style="zoom:67%;" /><span> </span></p><p>3️⃣<span>混合索引分配：假设每个盘块大小4K</span></p><p><img src="https://s2.loli.net/2023/11/11/wPAQTtcjDy6SO9i.png" alt="image-20231031155321772" style="zoom:67%;" /><span> </span></p><ol start='' ><li><p><span>直接地址：主要是为提高检索速度，此处有10个直接地址项，可索引10块共40K地址。文件小于40K时直接到这里来</span></p></li><li><p><span>一次间接地址：就是一级索引分配，其一次可索引1K个盘块，每块4KB，故允许文件长4MB</span></p><p><span>为什么是1K呢，因为一个表项4B，一块4KB，所以一块中就有4K个表项，一个表项索引到一块</span></p></li><li><p><span>二次间接地址：两级索引分配，索引一次1K块，每块又索引1K块，总大小4MB*1K=4GB</span></p></li><li><p><span>三次间接寻址：以此类推是4TB</span></p></li></ol></blockquote></blockquote><h3 id='232-空闲文件存储空间管理'><font color='cornflowerblue'><span>2.3.2. (空闲)文件存储空间管理</span></font></h3><blockquote><h4 id='2321-空闲文件表法'><font color='cornflowerblue'><span>2.3.2.1. 空闲文件表法</span></font></h4><blockquote><p>1️⃣<span>空闲文件/空白文件/自由文件：存储设备的一个连续空闲区</span></p><p>2️⃣<span>空闲盘块表：一个空闲文件占据一表项，表项包含第一空闲块号+空闲块号数+物理块号</span></p><p><img src="https://s2.loli.net/2023/11/11/vUdJBMHZOoNkDif.png" alt="image-20231031165117594" style="zoom: 50%;" /><span> </span></p><p>3️⃣<span>动态操作：</span></p><ol start='' ><li><p><span>请求存储空间：扫描空闲目录然后请求，请求=空闲直接分配，请求&lt;空闲则留下空余项并修改表项，请求&gt;空闲就不请求</span></p></li><li><p><span>撤销文件：扫描空闲目录，将释放空间的第一个物理块号填到表中</span></p><p><span>释放块与其他空闲块相邻则直接合并</span></p></li></ol></blockquote><h4 id='2322-空闲块链表法'><font color='cornflowerblue'><span>2.3.2.2. 空闲块链表法</span></font></h4><blockquote><p>1️⃣<span>概述：将所有空闲块连接成一个链表+一个头指针</span></p><p>2️⃣<span>动态操作</span></p><ol start='' ><li><p><span>建立文件：从链首依次取下几个空闲块给文件</span></p></li><li><p><span>撤销文件/回收存储空间：将要回收的空闲块依次链接入空闲块链表</span></p></li></ol><p>3️⃣<span>空闲盘区链：</span></p><ol start='' ><li><p><span>将链表元素从空闲盘块改为空闲盘区</span></p></li><li><p><span>每盘区有：若干空闲盘块+指向下一盘区指针+本盘区大小指示</span></p></li></ol></blockquote><h4 id='2323-位视图法'><font color='cornflowerblue'><span>2.3.2.3. 位视图法</span></font></h4><blockquote><p>1️⃣<span>概述：文件存储器在主存中建立一张表，每位都对应一物理块，1=已分配，0=空闲</span></p><p><img src="https://s2.loli.net/2023/11/11/iU3LNkat815MRJr.png" alt="image-20231031172855185" style="zoom:67%;" /><span> </span></p><p>2️⃣<span>动态操作：请求分配时OS先要扫描这张表，找出一组0，得到其盘号，然后改为1；回收正好相反</span></p></blockquote><h4 id='2324-成组链接法unix'><font color='orange'><span>2.3.2.4. 成组链接法(UNIX)</span></font></h4><blockquote><p>1️⃣<span>基本结构</span></p><p><img src="https://s2.loli.net/2023/11/11/GCuqJrZhNBWUycd.png" alt="image-20231101141812714" style="zoom:67%;" /><span> </span></p><ol start='' ><li><p><span>将所有空闲块，100块一组分很多组</span></p></li><li><p><span>每组需要记录两个数据：组中块数，所有块的编号。这两个数据放在前一组第一块中</span></p></li><li><p><span>第一块的这两个数据放在超级块中</span></p></li><li><p><span>总体结构：每组第一块链接成链表，组内多块构成堆栈</span></p></li></ol><p>2️⃣<span>分配空闲盘块的方法</span></p><ol start='' ><li><p><span>OS要为文件分配空闲块，先检查第一组中的块数</span></p></li><li><p><span>若第一组块数&gt;1，则超级块中记录的空闲块数-1，第一组中栈顶的块分配给文件</span></p></li><li><p><span>重复2的操作，直到第一组中只剩一块了，这一块是来记录下一组的块号和块数的</span></p></li><li><p><span>则将第二组的信息读入超级块，然后继续分配</span></p></li><li><p><span>一直读到最后一组，栈顶盘块有结束标记0，代表所有块都用完了，停止分配</span></p></li></ol><p>3️⃣<span>空闲盘块的回收</span></p><ol start='' ><li><p><span>若一组中不足100块，则直接把回收的块塞进去，然后超级块中放入该块号&amp;空闲块数+1</span></p></li><li><p><span>若一组已经100块了，则先将第一组的块号+块数写入回收块</span></p></li><li><p><span>由此这个回收块就变成了新的第一组了(一组仅这一块)</span></p></li><li><p><span>最后跟新超级块，块数变为1，设置块号为回收块的块号</span></p></li></ol></blockquote></blockquote></blockquote></blockquote></div></div>
+</body>
+</html>

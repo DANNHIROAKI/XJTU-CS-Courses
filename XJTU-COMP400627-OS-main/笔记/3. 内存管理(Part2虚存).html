@@ -1,0 +1,747 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>3. 内存管理(Part2虚存)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='2-虚拟内存管理'><font color='cornflowerblue'><span>2. 虚拟内存管理</span></font></h1><blockquote><h2 id='20-pre'><font color='cornflowerblue'><span>2.0. Pre</span></font></h2><blockquote><h3 id='201-引入虚存的原因'><font color='cornflowerblue'><span>2.0.1. 引入虚存的原因</span></font></h3><blockquote><p>1️⃣<span>一次性(全装入后才执行)+驻留性(运行完后作业才脱离内存)，对于大作业难以满足要求</span></p><p>2️⃣<span>程序执行时有些代码用的较少(错误处理部分)，而程序IO又耗费世家</span></p></blockquote><h3 id='201-局部性原理'><font color='cornflowerblue'><span>2.0.1. 局部性原理</span></font></h3><blockquote><p>1️⃣<span>时间局部性：同一指令/数据短时间内被高频执行/访问</span><strong><span>(这可以归因于大量的循环操作)</span></strong></p><p>2️⃣<span>空间局部性：某条指令被访问后，其附近的指令有极大概率也被访问</span></p></blockquote></blockquote><h2 id='21-虚存基本概念'><font color='cornflowerblue'><span>2.1. 虚存基本概念</span></font></h2><blockquote><h3 id='211-虚存的定义'><font color='cornflowerblue'><span>2.1.1. 虚存的定义</span></font></h3><blockquote><p>1️⃣<span>部分装入：一部分装入内存，一部分放外存</span></p><p>2️⃣<span>请求调入：执行时访问信息不在内存时，再要求OS将其调入内存</span></p><p>3️⃣<span>置换功能：OS将内存中暂时不用的内容置换到外存</span></p><p>4️⃣<span>虚拟内存：逻辑上扩充内存容量的系统</span></p></blockquote><h3 id='212-虚存的特征'><font color='cornflowerblue'><span>2.1.2. 虚存的特征</span></font></h3><blockquote><p>1️⃣<span>离散性(最基本)：程序被打散存储在内存中</span></p><p>2️⃣<span>多次性(最重要)：一个作业被分成多次调入内存</span></p><p>3️⃣<span>交换性：作业在运行时可以不断从内存中换入换出</span></p><p>4️⃣<span>虚拟性：用户使用的内存远大于实际内存</span></p></blockquote><h3 id='213-其他有关虚存'><font color='cornflowerblue'><span>2.1.3. 其他有关虚存</span></font></h3><blockquote><p><font color='red'>1️⃣<span>虚存实现手段：请求分页，请求分段</span></font></p><p>2️⃣<span>硬件机构：外存外存都要足够大，有中断机构(访问内容不在内存时就中断程序)，地址变换机构，段/页表</span></p><p>3️⃣<span>好处：较小内存执行较大程序，并发性提高，比覆盖技术编成更简单</span></p></blockquote></blockquote><h2 id='22-请求分页存储管理方式'><font color='cornflowerblue'><span>2.2. 请求分页存储管理方式</span></font></h2><blockquote><h3 id='221-请求分页原理局部性原理'><font color='cornflowerblue'><span>2.2.1. 请求分页原理：局部性原理</span></font></h3><blockquote><p>1️⃣<span>请求分页=基本分页+请求调页功能+页面置换功能</span></p><p>2️⃣<span>页面调入策列</span></p><ol start='' ><li><p><span>预调页策略：进程首次调入时，把预计很快要被访问的页，主动调入内存</span></p></li><li><p><span>请求调页策略：进程运行时，将需要的页调入内存(通过</span><strong><span>页面置换</span></strong><span>把暂时不用的页置换出去)</span></p></li></ol><p><font color='red'><span>PS: 内存中每一页都在外存上保留一份副本</span></font></p><p>3️⃣<span>从何处调入页面：硬盘分为文件区+对换区，对换区IO快于文件区</span></p><ol start='' ><li><p><span>对换区足够大：全从对换区调入所需页面，运行前就把进程必要块放到对换区</span></p></li><li><p><span>对换区不够大：不会被修改的文件都从文件区调入(减少IO)，需要修改的放到调换区</span></p></li><li><p><span>UNIX方式：未运行的页放在文件区，运行过又被换出的放对换区</span></p></li></ol></blockquote><h3 id='222-页表结构'><font color='cornflowerblue'><span>2.2.2. 页表结构</span></font></h3><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231023141323804.png" alt="image-20231023141323804" style="zoom: 80%;" /><span> </span></p><p>1️⃣<span>页号与物理块号：与之前相同，虚拟地址页</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="3.93ex" height="3.262ex" role="img" focusable="false" viewBox="0 -1359.7 1737 1441.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-3-TEX-S4-2190" d="M944 261T944 250T929 230H165Q167 228 182 216T211 189T244 152T277 96T303 25Q308 7 308 0Q308 -11 288 -11Q281 -11 278 -11T272 -7T267 2T263 21Q245 94 195 151T73 236Q58 242 55 247Q55 254 59 257T73 264Q121 283 158 314T215 375T247 434T264 480L267 497Q269 503 270 505T275 509T288 511Q308 511 308 500Q308 493 303 475Q293 438 278 406T246 352T215 315T185 287T165 270H929Q944 261 944 250Z"></path><path id="MJX-3-TEX-S4-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2190" xlink:href="#MJX-3-TEX-S4-2190"></use><use data-c="2192" xlink:href="#MJX-3-TEX-S4-2192" transform="translate(737,0)"></use></g></g><g data-mml-node="mpadded" transform="translate(0,870.8) scale(0.707)"><g transform="translate(333,-200)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">映</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">射</text></g><g data-mml-node="mspace" transform="translate(1789.5,0)"></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">↔</mo></mstyle><mpadded width="+0.667em" lspace="0.333em" voffset="-.2em" height="-.2em"><mtext>映</mtext><mtext>射</mtext><mspace depth=".25em"></mspace></mpadded></mover></math></mjx-assistive-mml></mjx-container><script type="math/tex">\xleftrightarrow{映射}</script><span>物理地址快</span></p><p>2️⃣<span>状态位(存在位)：判断页是否在主存，不在时触发</span><strong><span>缺页中断</span></strong></p><p>3️⃣<span>访问字段：记录局部性参数——页面一段时间内访问次数/最近多久未被访问</span></p><p>4️⃣<span>修改位：记录页面调入内存后是否被修改</span></p><ol start='' ><li><p><span>CPU以写方式访问页时，修改位被设置</span></p></li><li><p><span>页在内存中没被修改，页换出时就不再写到外存(节省读写次数)</span></p></li></ol><p>5️⃣<span>外存地址：页面在外存的地址，调入该页时使用</span></p></blockquote><h3 id='223-缺页中断与地址变换'><font color='cornflowerblue'><span>2.2.3. 缺页中断与地址变换</span></font></h3><blockquote><p>1️⃣<span>如果访问的页在内存中，地址变换与分页存储管理相同</span></p><p>2️⃣<span>访问页不在内存，进程就请求OS从外存调入所需页</span></p><p><img src="https://note-image-1307786938.cos.ap-beijing.myqcloud.com/typora/qshell/image-20211104153315925.png" alt="image-20211104153315925" style="zoom:67%;" /><span>  </span></p><p>➕<span> 缺页中断与一般中断的区别</span></p><ol start='' ><li><p><span>缺页/一般中断，发生在指令执行期间/结束后</span></p></li><li><p><span>一指令可触发多次缺页中断，如指令的两个操作数都在外存</span></p></li><li><p><span>缺页/一般中断，返回到</span><strong><span>本指令开始/下条指令</span></strong><span>重新执行</span></p></li></ol></blockquote><h3 id='224-请求分页的性能'><font color='cornflowerblue'><span>2.2.4. 请求分页的性能</span></font></h3><blockquote><p>1️⃣<span>优点：离散存储碎片少，提供虚拟存储主存利用率高</span></p><p>2️⃣<span>缺点：硬件复杂，会抖动，最后一页仍有内部碎片</span></p><p>3️⃣<span>主动动作：处理缺页中断，从磁盘读页(开销最大)，重新开始执行被中断程序</span></p><p>4️⃣<span>缺页率=访问访问失败次数/进程访问内存总次数</span></p></blockquote></blockquote><h2 id='23-页面置换淘汰算法'><font color='cornflowerblue'><span>2.3. 页面置换(淘汰)算法</span></font></h2><blockquote><h3 id='231-最佳置换opt'><font color='cornflowerblue'><span>2.3.1. 最佳置换(OPT)</span></font></h3><blockquote><p>1️⃣<span>页面号引用串：进程执行时，按时间顺序引用的页面序列</span></p><p>2️⃣<span>OPT：已知页面号引用串的情况下(其实不可能的)，淘汰以后不再使用/最迟被使用的页</span></p><p>3️⃣<span>特点：缺页率最低，但无法实现(仅作为理论最低缺页率的参考)</span></p></blockquote><h3 id='232-先进先出fifo-最简单'><font color='cornflowerblue'><span>2.3.2. 先进先出(FIFO): 最简单</span></font></h3><blockquote><p>1️⃣<span>队列结构：指针指向最先进入的页，每次淘汰指针指向的页</span></p><p>2️⃣<span>缺点：会产生Belady异常，源于最早进来(也是最早淘汰)的页使用最频繁</span></p></blockquote><h3 id='233-最近最少使用lru'><font color='cornflowerblue'><span>2.3.3. 最近最少使用(LRU)</span></font></h3><blockquote><p>1️⃣<span>原理：</span></p><ol start='' ><li><p><span>最近最少使用的页</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="9.87ex" height="5.146ex" role="img" focusable="false" viewBox="0 -1359.7 4362.3 2274.4" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -2.069ex;"><defs><path id="MJX-4-TEX-S4-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-4-TEX-S4-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="munderover"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-4-TEX-S4-2192" transform="translate(3362.3,0)"></use><svg width="3462.3" height="865" x="0" y="-182" viewBox="865.6 -182 3462.3 865"><use data-c="2212" xlink:href="#MJX-4-TEX-S4-2212" transform="scale(6.675,1)"></use></svg></g></g><g data-mml-node="mpadded" transform="translate(625.1,-779.3) scale(0.707)"><g transform="translate(278,150)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">性</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">能</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">接</text></g><g data-mml-node="mtext" transform="translate(2673.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">近</text></g><g data-mml-node="mspace" transform="translate(3568.3,0)"></g></g></g><g data-mml-node="mpadded" transform="translate(0,870.8) scale(0.707)"><g transform="translate(278,-200)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">近</text></g><g data-mml-node="mtext" transform="translate(894.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">似</text></g><g data-mml-node="mtext" transform="translate(1789.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mtext" transform="translate(2673.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">等</text></g><g data-mml-node="mtext" transform="translate(3568.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">同</text></g><g data-mml-node="mtext" transform="translate(4452.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">于</text></g><g data-mml-node="mspace" transform="translate(5336.3,0)"></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><munderover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">→</mo></mstyle><mpadded width="+0.833em" lspace="0.278em" voffset=".15em" depth="-.15em"><mtext>性</mtext><mtext>能</mtext><mtext>接</mtext><mtext>近</mtext><mspace height=".75em"></mspace></mpadded><mpadded width="+0.833em" lspace="0.278em" voffset="-.2em" height="-.2em"><mtext>近</mtext><mtext>似</mtext><mtext>的</mtext><mtext>等</mtext><mtext>同</mtext><mtext>于</mtext><mspace depth=".25em"></mspace></mpadded></munderover></math></mjx-assistive-mml></mjx-container><script type="math/tex">\xrightarrow[性能接近]{近似的等同于}</script><span>往后最迟被使用的页(OPT)</span></p></li><li><p><span>基于假设：刚访问的页倾向于马上又被访问</span></p></li></ol><p>2️⃣<span>含义：淘汰最久不被使用的页</span></p><p>3️⃣<span>硬件支持：每个页表项有一个计数器，记录访问情况，作为被淘汰依据</span></p></blockquote><h3 id='234-最不常用最常用置换lfumfu'><font color='cornflowerblue'><span>2.3.4. 最不常用/最常用置换(LFU/MFU)</span></font></h3><blockquote><p>1️⃣<span>含义：选择当前为止访问最少次/最多次的页面淘汰</span></p><p>2️⃣<span>思想：淘汰最少使用的→访问多的倾向于再被访问；淘汰最多使用的→访问少的页往往最新调入</span></p><p>3️⃣<span>实现方式：设置一个计数器，被访问一次该页的计数器就+1</span></p></blockquote><h3 id='235-lru近似算法'><font color='cornflowerblue'><span>2.3.5. LRU近似算法</span></font></h3><blockquote><h4 id='2351-时钟置换clock最近未使用nru二次机会'><font color='cornflowerblue'><span>2.3.5.1. 时钟置换(CLOCK)/最近未使用(NRU)/二次机会</span></font></h4><blockquote><p><span>LRU+FIFO的折中</span></p><p>1️⃣<span>数据结构：每页设一个访问位(被访问后置1)，内存中所有页构成一个</span><strong><span>循环链表</span></strong></p><p>2️⃣<span>访问页在链表中：访问位改为1</span></p><p>3️⃣<span>访问页不在链表中：</span></p><ol start='' ><li><p><span>指针指向上次被淘汰页的下一页</span></p></li><li><p><span>指针顺序&amp;循环遍历</span><strong><span>循环链表</span></strong></p><p><span>2.1. 指针指向页的访问位=1时，就把该访问位清零，然后继续遍历</span></p><p><span>2.2. 指针指向页的访问位=0时，就淘汰该位然后访问位变1</span></p></li></ol><p>4️⃣<span>示例：</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231023211133801.png" alt="image-20231023211133801" style="zoom:90%;" /><span> </span></p></blockquote><h4 id='2352-改进时钟clock增强的二次访问'><font color='cornflowerblue'><span>2.3.5.2. 改进时钟(CLOCK)/增强的二次访问</span></font></h4><blockquote><p>1️⃣<span>改进的核心：增加了修改位(被修改了置1)，访问位同为0时优先淘汰没被修改的位(IO代价更小)</span></p><p>2️⃣<span>算法步骤：进程启动将所有(访问位=0, 修改位=0)</span></p><ol start='' ><li><p><span>从指针位置开始首次循环遍历</span></p></li><li><p><span>先试图找到第一个(</span><strong><span>访问位=0</span></strong><span>, </span><strong><span>修改位=0</span></strong><span>)页替换，若没找到</span>⬇️</p></li><li><p><span>再试图找到第一个(</span><strong><span>访问位=0</span></strong><span>, </span><strong><span>修改位=1</span></strong><span>)页替换，所扫描过之处皆置</span><strong><span>访问位=0</span></strong></p></li><li><p><span>如还没找到，就重复上述过程(重复下去一定能找到)</span></p></li></ol></blockquote></blockquote><h3 id='237-页面缓冲pba'><font color='orange'><span>2.3.7. 页面缓冲(PBA)</span></font></h3><blockquote><p>1️⃣<span>按照FIFO算法选择被置换页</span></p><p>2️⃣<span>对那些要被换出的页面，为其在内存中建立两个链表(缓冲)</span></p><ol start='' ><li><p><span>对于被换出的未修改的未修改的页，丢到空闲页链表尾</span></p></li><li><p><span>对于被换出的已修改的未修改的页，丢到已修改页链表尾</span></p></li></ol><p>3️⃣<span>对于缓冲中的页，在未来一段时间内如果要访问他们，可以快速响应(免去IO)</span></p><p>4️⃣<span>直到修改页链表到达一定规模后，再将他们一同IO到磁盘</span></p></blockquote></blockquote><h2 id='24-工作集理论基于局部性原理'><font color='cornflowerblue'><span>2.4. 工作集理论：基于局部性原理</span></font></h2><blockquote><p>1️⃣<span>目的：解决抖动，提高CPU利用率</span></p><p>2️⃣<span>原理：预知程序在特定时间内要访问的页面(活跃页面)并提前加载它们</span></p><p>3️⃣<span>基本概念</span></p><ol start='' ><li><p><span>工作集：最近n次内存访问的页面集合，或者说落入工作集窗口的页面集合</span></p></li><li><p><font color="red"><span>工作集窗口(Δ)</span></font><span>：对于给定的访问序列选取定长的区间，其大小选定很重要，Δ过小则不能包含整个局部，Δ过大则可能包含多个局部</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20240201120807041.png" alt="image-20240201120807041" style="zoom: 67%;" /><span>  </span></p></li></ol><p>4️⃣<span>工作集模型：</span></p><ol start='' ><li><p><span>OS跟踪每个进程的工作集(如何跟踪是难点)，为其分配大于其工作集的物理块数</span></p></li><li><p><span>若还有空闲物理块，启动其他进程</span></p></li><li><p><span>若所有进程的工作集之和&gt;可用物理块总数，OS会暂停&amp;换出一个进程，释放的物理块给其他进程</span></p></li></ol></blockquote><h2 id='25-页面分配策略如何给进程一定空闲页'><font color='cornflowerblue'><span>2.5. 页面分配策略：如何给进程一定空闲页</span></font></h2><blockquote><h3 id='251-最少页数'><font color='cornflowerblue'><span>2.5.1. 最少页数</span></font></h3><blockquote><p>1️⃣<span>含义：保证进程运行的最小物理块数</span></p><p>2️⃣<span>取值依据：指令格式，功能，寻址方式</span></p><p>➕<span>某进程物理块数&lt;最少页数：进程频繁缺页，进而崩溃</span></p></blockquote><h3 id='252-分配替换策略'><font color='cornflowerblue'><span>2.5.2. 分配&amp;替换策略</span></font></h3><blockquote><p>1️⃣<span>分配(固定分配)：平均(每个进程块数一样)+按比例+按优先级</span></p><p>2️⃣<span>替换：全局(进程之间可争躲页，块数会增加)+局部(进程只能从自己那获得页，块数不变)</span></p><p>➕<span>全局置换时，无法控制页错误率，系统吞吐率会更高</span></p></blockquote><h3 id='253-组合'><font color='cornflowerblue'><span>2.5.3. 组合</span></font></h3><blockquote><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>固定分配：每个进程分得相同个物理块</span></th><th><span>可变分配：OS给进程动态分配物理块</span></th></tr></thead><tbody><tr><td><span>局部置换：进程只在自己内存块中置换页面</span></td><td><span>各进程物理块数相同，进程间不争夺块，块少进程频繁换页/块多进程浪费内存(核心在于进程块数分配)</span></td><td><span>先给每进程一定物理块，进程互相枪内存。增加频繁换页进程块数，减少缺页率过低进程块数</span></td></tr><tr><td><span>全局置换：进程需要更多内存时，可以替换掉其他进程的内存页</span></td><td><span>无</span></td><td><span>OS维护一空闲物理块队列，进程每次缺页就从队里取一个，取完了就去抢其他进程的块</span></td></tr></tbody></table></figure></blockquote></blockquote><h2 id='27-抖动与缺页率'><font color='cornflowerblue'><span>2.7. 抖动与缺页率</span></font></h2><blockquote><h3 id='271-belady异常'><font color='orange'><span>2.7.1. Belady异常</span></font></h3><blockquote><p>1️⃣<span>含义：FIFO算法中缺页率会随内存中块数增加而增加</span></p><p>2️⃣<span>成因：FIFO算法的策略与内存动态特征违背，总会换掉进程要访问的页</span></p><p>3️⃣<span>PS：LRU算法和最佳置换算法永远不会出现Belady异</span></p></blockquote><h3 id='272-抖动颠簸现象'><font color='cornflowerblue'><span>2.7.2. 抖动/颠簸现象</span></font></h3><blockquote><p>1️⃣<span>含义：某一页面刚被换出又被访问(重新调入)，频繁调入调出，CPU利用率低下</span></p><p>2️⃣<span>成因：进程分到的物理块太少</span></p><p>3️⃣<span>解决方案：</span></p><ol start='' ><li><p><span>全局置换会造成颠簸，局部置换能限制颠簸</span></p></li><li><p><span>根本上要给进程足够的物理块</span></p></li></ol></blockquote><h3 id='273-缺页率'><font color='cornflowerblue'><span>2.7.3. 缺页率</span></font></h3><blockquote><p><span>作业有n页，系统给作业分了m页</span></p><p><span>如果作业运行时要访问A次页面，当所访问的页不在内存中时，需要将该页调入内存F次</span></p><p><span>则定义</span></p><p>1️⃣<span>缺页率：f=F/A</span></p><p>2️⃣<span>命中率：1-f</span></p><p>3️⃣<span>控制缺页频率：缺页率太低/高，回收/分给一些进程的页框</span></p></blockquote></blockquote><h2 id='28-请求分段存储管理系统'><font color='orange'><span>2.8. 请求分段存储管理系统</span></font></h2><blockquote><p>1️⃣<span>将当前需要的若干段装入主存便可运行，访问分段不在主存中时再调入，将不用分段也置换出去</span></p><p>2️⃣<span>段表表项结构</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231024092120076.png" alt="image-20231024092120076" style="zoom:67%;" /><span> </span></p></blockquote></blockquote><h1 id='ps-总结'><span>PS. 总结</span></h1><blockquote><h2 id='ps1-三种离散分配方式'><span>PS.1. 三种离散分配方式</span></h2><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231024093831015.png" alt="image-20231024093831015" style="zoom:67%;" /><span> </span></p></blockquote><h2 id='ps2-几种内存管理'><span>PS.2. 几种内存管理</span></h2><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231024093940449.png" alt="image-20231024093940449" style="zoom:67%;" /><span> </span></p></blockquote></blockquote><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>

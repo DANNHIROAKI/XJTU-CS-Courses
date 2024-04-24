@@ -1,0 +1,94 @@
+D:/CPU/SCCPU/SCCPUSIM/ctrl.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/ctrl.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ctrl
+
+Top level modules:
+	ctrl
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/sccomp.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/sccomp.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sccomp
+
+Top level modules:
+	sccomp
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/sccpu.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/sccpu.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sccpu
+
+Top level modules:
+	sccpu
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/im.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/im.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module im
+
+Top level modules:
+	im
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/dm.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/dm.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dm
+
+Top level modules:
+	dm
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/sccomp_tb.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/sccomp_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sccomp_tb
+
+Top level modules:
+	sccomp_tb
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/PC.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/PC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/ctrl_encode_def.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/ctrl_encode_def.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/RF.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/RF.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RF
+
+Top level modules:
+	RF
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/EXT.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/EXT.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXT
+
+Top level modules:
+	EXT
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/NPC.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/NPC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module NPC
+
+Top level modules:
+	NPC
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/alu.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/alu.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} D:/CPU/SCCPU/SCCPUSIM/mux.v {1 {vlog -work work -stats=none D:/CPU/SCCPU/SCCPUSIM/mux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux2
+-- Compiling module mux4
+-- Compiling module mux8
+-- Compiling module mux16
+
+Top level modules:
+	mux2
+	mux4
+	mux8
+	mux16
+
+} {} {}}

@@ -1,0 +1,10 @@
+﻿  重排九宫.cpp
+D:\Visual Studio\VC\Tools\MSVC\14.37.32822\include\variant(13): warning STL4038: The contents of <variant> are available only with C++17 or later.
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(66,80): warning C4145: “&&”: 关系表达式用作 switch 表达式；可能和“&”混淆
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(83,80): warning C4145: “&&”: 关系表达式用作 switch 表达式；可能和“&”混淆
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(167,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(309,20): warning C4101: “end”: 未引用的局部变量
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(392,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(349,20): warning C4101: “end”: 未引用的局部变量
+E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\重排九宫\重排九宫.cpp(404,20): warning C4101: “end”: 未引用的局部变量
+  重排九宫.vcxproj -> E:\OneDrive\%本科OneDrive\大三上\.人工智能\重排九宫\重排九宫\x64\Debug\重排九宫.exe

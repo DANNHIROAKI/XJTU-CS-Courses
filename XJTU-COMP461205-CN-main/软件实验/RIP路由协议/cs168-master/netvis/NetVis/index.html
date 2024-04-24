@@ -1,0 +1,332 @@
+<html>
+<!-- Hasty port of NetVis to JS; MM 2018 -->
+
+<head>
+<title>NetVisJS</title>
+<style>
+html, body, .tight {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  border: 0;
+  overflow: hidden;
+  display: block;
+  padding: 0px;
+}
+
+body {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.yes-select {
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+}
+
+div.popupwindow_content {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  //overflow: hidden !important;
+  display: block;
+}
+div.popupwindow_content[style] {
+  overflow: hidden !important;
+}
+
+div.close-button {
+  display: none;
+}
+
+</style>
+<!--
+<script type="text/javascript" src="jslibs/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="jslibs/popup/src/popupwindow.js"></script>
+<script type="text/javascript" src="jslibs/dat.gui.js"></script>
+<script type="text/javascript" src="jslibs/processing.js"></script>
+-->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/gasparesganga/jquery-popup-window@1.0.3/src/popupwindow.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="popupwindow.css">
+
+
+
+<script type="text/javascript">
+
+const PALETTE_WIDTH = 350;
+
+
+class JSONWrapper
+{
+  constructor (d) { this.d = d; }
+  getDouble (k, d)
+  {
+    if (d === undefined) d = 0.0;
+    var r = this.d[k];
+    if (r === undefined) return d;
+    return r;
+  }
+  getString (k, d)
+  {
+    if (d === undefined) d = "";
+    var r = this.d[k];
+    if (r === undefined) return d;
+    return r;
+  }
+  getBoolean (k, d)
+  {
+    if (d === undefined) d = false;
+    var r = this.d[k];
+    if (r === undefined) return d;
+    return Boolean(r);
+  }
+  has (k)
+  {
+    return this.d[k] !== undefined;
+  }
+  getJSONObject (k) { return new JSONWrapper(this.d[k]); }
+  getNames () { console.log(this.d); return Object.keys(this.d); }
+  getJSONArray (k) { return new JSONWrapper(this.d[k]); }
+  getLength () { return this.d.length; }
+}
+
+class Sender
+{
+  constructor ()
+  {
+    this.socket = null;
+    setInterval(this.connect.bind(this), 2500);
+  }
+  connect ()
+  {
+    if (this.socket)
+    {
+      switch (this.socket.readyState)
+      {
+        case 0:
+        case 1:
+          return;
+      }
+    }
+    if (this.socket)
+    {
+      this.socket.onclose = this.socket.onmessage = null;
+      this.socket.close();
+    }
+
+    this.socket = new WebSocket("ws://" + location.host + "/netvis_ws");
+    this.socket.onclose = function () {
+      console.log("Reconnect momentarily...");
+      try
+      {
+        this.socket.close();
+      }
+      catch
+      {
+      }
+      this.socket = null;
+    }
+    this.socket.onerror = this.socket.onclose;
+
+    this.socket.onmessage = function (event) {
+      var data = JSON.parse(event.data);
+      console.log(data);
+      var netvis = Processing.getInstanceById('netvis');
+      if (netvis) netvis.process(new JSONWrapper(data));
+    };
+    this.socket.onopen = function (event) {
+      this.connecting = false;
+      this.reconnecting = false;
+      console.log("Connected");
+    };
+  }
+  send (kvs)
+  {
+    var o = {};
+    for (var i = 0; i < kvs.length; i++)
+    {
+      o[kvs[i][0]] = kvs[i][1];
+    }
+    try
+    {
+      this.socket.send(JSON.stringify(o));
+      console.log(JSON.stringify(o));
+    }
+    catch
+    {
+      this.socket.onerror();
+    }
+  }
+}
+
+
+class JSMisc
+{
+  setInfoText (s)
+  {
+    var c = $("#info");
+    var p = c.parent();
+    var pp = c.parent().parent();
+    $("#info").text(s);
+    pp.height(c.innerHeight() + c.position().top);
+    $("#info").PopupWindow("setSize", {height:pp.height(),width:pp.width()});
+  }
+  println (o)
+  {
+    console.log(o);
+  }
+  getClassName (o)
+  {
+    return o.constructor.name;
+  }
+}
+
+class Slider
+{
+  constructor ()
+  {
+    this.value = 0.0;
+    this.control = null;
+  }
+
+  linebreak () {}
+  setColor (c) {}
+  setGroup (g) {}
+
+  setValue (v)
+  {
+    this.value = v;
+    this.control.updateDisplay();
+  }
+  getValue ()
+  {
+    return this.value;
+  }
+}
+
+class Control
+{
+  constructor ()
+  {
+    this.gui = new dat.GUI({autoPlace:false, width:PALETTE_WIDTH});
+    var container = document.getElementById("settings-container");
+    container.appendChild(this.gui.domElement);
+    this.groups = Object();
+    this.group = this.gui;
+  }
+  setGroup (group)
+  {
+    if (this.groups[group] == undefined)
+    {
+      this.groups[group] = this.gui.addFolder(group);
+    }
+    this.group = this.groups[group];
+    this.group.open();
+  }
+  addSlider (name, low, high)
+  {
+    var s = new Slider();
+    var c = this.group.add(s, 'value', low, high).name(name).step(0.01);
+    s.control = c;
+    return s;
+  }
+}
+
+var control = null;
+var sender = new Sender();
+var misc = new JSMisc();
+
+window.onload = function ()
+{
+  control = new Control();
+
+  function setJS ()
+  {
+    var netvis = Processing.getInstanceById('netvis');
+    if (! netvis)
+    {
+      setTimeout(setJS, 100);
+      return;
+    }
+
+    console.log("setJS()");
+    netvis.realInit(control, sender, misc);
+
+    var canvas = document.getElementById('netvis');
+
+    function resize () {
+      console.log("resize");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      netvis.width = window.innerWidth;
+      netvis.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize, false);
+    resize();
+
+    sender.connect();
+  }
+
+
+  $("#settings-container").PopupWindow("init", {
+    title: "Settings",
+    modal: false,
+    //customClass: "tight",
+    buttons: {
+      close: false,
+      maximize: false
+    },
+    resizable: false,
+    statusBar: false,
+    width: PALETTE_WIDTH,
+    height: 28*4+28,
+    top: 2,
+    left: 2,
+    });
+  $("#settings-container").PopupWindow("open", {});
+
+  $("#info").PopupWindow("init", {
+    title: "Info",
+    modal: false,
+    buttons: {
+      close: false,
+      maximize: false
+    },
+    statusBar: false,
+    width: PALETTE_WIDTH,
+    left: 2,
+    top: 28*4+28+6, // Gross
+    height: 100,
+    });
+  $("#info").PopupWindow("open", {});
+
+
+  setJS();
+}
+
+</script>
+
+</head>
+<body>
+</body>
+
+<canvas id="netvis" data-processing-sources="Edge.pde Graph.pde Nodes.pde Packet.pde Vector2D.pde NetVisJS.pde" width=></canvas>
+
+<div id="info" class="yes-select" style="white-space:pre; padding: 2px">Welcome to NetVisJS!</div>
+<div id="settings-container"></div>
+
+</html>
