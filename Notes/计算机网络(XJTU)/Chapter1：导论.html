@@ -1,0 +1,765 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>Chapter1：导论</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='chapter1导论'><span>Chapter1：导论</span></h1><h1 id='1-基本概念'><span>1. 基本概念</span></h1><blockquote><p><strong><span>1️⃣</span></strong><span>网络：一个在两个或多个实体之间传输有价值物品的系统</span></p><p><strong><span>2️⃣</span></strong><span>计算机网络：多台独立计算机，通过通信设备和软件互联，以共享交换资源的集合</span></p><p><strong><span>3️⃣</span></strong><mark><span>计算机网络vs分布式系统</span></mark></p><ol start='' ><li><p><span>分布式系统：以提高整体性能为目的，各计算机协调自治，呈现给用户的是整体系统</span></p></li><li><p><span>计算机网络：以资源共享为目的，各计算机独立，呈现给用户的是分散的系统</span></p></li></ol></blockquote><h1 id='2-基于网络的获取信息'><span>2. 基于网络的获取信息</span></h1><blockquote><p><strong><span>1️⃣</span></strong><span>C-S模式：客户端进程向服务器进程发请求，然后等待服务器响应，如访问网页</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/AtR3aGUCLgF8EOm.png" alt="image-20231231142047737" style="zoom:80%;" /><span>  </span></p><p><strong><span>2️⃣</span></strong><span>P2P模式：无固定客户端/服务器，建立在另一个网络上的松散网络组</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231142156846.png" alt="image-20231231142156846" style="zoom:50%;" /><span> </span></p><p><strong><span>3️⃣</span></strong><span>端-端通信：即时通讯，推特，社交网络，Wiki(社区成员共同编辑)</span></p><p><strong><span>4️⃣</span></strong><span>电子商务 </span></p><figure class='table-figure'><table><thead><tr><th><span>标签</span></th><th><span>全称</span></th><th><span>示例</span></th></tr></thead><tbody><tr><td><span>B2C</span></td><td><span>企业对消费者</span></td><td><span>在线订购书籍</span></td></tr><tr><td><span>B2B</span></td><td><span>企业对企业</span></td><td><span>汽车制造商从供应商处订购轮胎</span></td></tr><tr><td><span>G2C</span></td><td><span>政府对消费者</span></td><td><span>电子方式分发纳税表格</span></td></tr><tr><td><span>C2C</span></td><td><span>消费者对消费者</span></td><td><span>在线拍卖二手产品</span></td></tr><tr><td><span>P2P</span></td><td><span>点对点</span></td><td><span>音乐或文件共享；Skype通话</span></td></tr></tbody></table></figure><p><strong><span>5️⃣</span></strong><span>娱乐</span></p><ol start='' ><li><p><span>IPTV：基于IP技术的电视节目</span></p></li><li><p><span>媒体流：通过网络实时传输的多媒体，如抖音，无需下载</span></p></li><li><p><span>多人实时模拟游戏</span></p></li><li><p><span>虚拟世界</span></p></li></ol><p><strong><span>6️⃣</span></strong><span>万物互联</span></p><ol start='' ><li><p><span>IoT(物联网)：将所有电子设备连接至互联网</span></p></li><li><p><span>电力线网络：通过电线上网</span></p></li><li><p><span>将计算融入生活：如智能家居</span></p></li></ol></blockquote><h1 id='3-计算机网络类型'><span>3. 计算机网络类型</span></h1><blockquote><figure class='table-figure'><table><thead><tr><th><span>类型</span></th><th><span>描述</span></th><th><span>注意事项</span></th></tr></thead><tbody><tr><td><span>宽带接入网络</span></td><td><span>用铜线/同轴电缆/光纤，将家庭接入网络</span></td><td><mark><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="21.652ex" height="3.529ex" role="img" focusable="false" viewBox="0 -1359.7 9570 1559.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.452ex;"><defs><path id="MJX-2-TEX-S4-2190" d="M944 261T944 250T929 230H165Q167 228 182 216T211 189T244 152T277 96T303 25Q308 7 308 0Q308 -11 288 -11Q281 -11 278 -11T272 -7T267 2T263 21Q245 94 195 151T73 236Q58 242 55 247Q55 254 59 257T73 264Q121 283 158 314T215 375T247 434T264 480L267 497Q269 503 270 505T275 509T288 511Q308 511 308 500Q308 493 303 475Q293 438 278 406T246 352T215 315T185 287T165 270H929Q944 261 944 250Z"></path><path id="MJX-2-TEX-S4-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-2-TEX-S4-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-2-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">网</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">络</text></g><g data-mml-node="mtext" transform="translate(1778.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">价</text></g><g data-mml-node="mtext" transform="translate(2673.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">值</text></g><g data-mml-node="mover" transform="translate(3846,0)"><g data-mml-node="mstyle"><g data-mml-node="mo"><use data-c="2190" xlink:href="#MJX-2-TEX-S4-2190"></use><use data-c="2192" xlink:href="#MJX-2-TEX-S4-2192" transform="translate(1346.9,0)"></use><svg width="546.9" height="865" x="900" y="-182" viewBox="136.7 -182 546.9 865"><use data-c="2212" xlink:href="#MJX-2-TEX-S4-2212" transform="scale(1.054,1)"></use></svg></g></g><g data-mml-node="mpadded" transform="translate(0,870.8) scale(0.707)"><g transform="translate(333,-200)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">正</text></g><g data-mml-node="mtext" transform="translate(884,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">比</text></g><g data-mml-node="mtext" transform="translate(1768,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">于</text></g><g data-mml-node="mspace" transform="translate(2652,0)"></g></g></g></g><g data-mml-node="mtext" transform="translate(6470.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">用</text></g><g data-mml-node="mtext" transform="translate(7354.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">户</text></g><g data-mml-node="msup" transform="translate(8238.7,0)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mn" transform="translate(927.8,477.1) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>网</mtext><mtext>络</mtext><mtext>价</mtext><mtext>值</mtext><mover><mstyle scriptlevel="0"><mo data-mjx-texclass="REL">↔</mo></mstyle><mpadded width="+0.667em" lspace="0.333em" voffset="-.2em" height="-.2em"><mtext>正</mtext><mtext>比</mtext><mtext>于</mtext><mspace depth=".25em"></mspace></mpadded></mover><mtext>用</mtext><mtext>户</mtext><msup><mtext>数</mtext><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container><script type="math/tex">网络价值\xleftrightarrow{正比于}用户数^2</script></mark></td></tr><tr><td><span>移动/无线接入网络</span></td><td><span>基于IEEE802.11，有SMS/GPS/NFC等</span></td><td><span>\</span></td></tr><tr><td><span>数据中心网络</span></td><td><span>可以在数据中心内外大规模传输数据</span></td><td><span>数据中心=云</span></td></tr><tr><td><span>内容分发网络CDN</span></td><td><span>存放内容副本于不同地理位置，加速本地访问速度</span></td><td><span>\</span></td></tr><tr><td><span>中转网络</span></td><td><span>当服务器和用户无法直达时，由中转网络桥接</span></td><td><span>不多用了，都用CDN/ISP</span></td></tr><tr><td><span>企业网络</span></td><td><span>通过VPN将分散的网络连接成一个逻辑网络</span></td><td><span>\</span></td></tr></tbody></table></figure></blockquote><h1 id='4-网络技术类别'><mark><span>4. 网络技术类别</span></mark></h1><blockquote><h2 id='41-传输技术分类'><span>4.1. 传输技术分类</span></h2><blockquote><p><strong><span>1️⃣</span></strong><span>广播链接：一发多收(如广播电视)，有如下两种拓扑(总线和环)，需要解决共享信道和冲突</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231142223275.png" alt="image-20231231142223275" style="zoom: 67%;" /><span>   </span></p><p><strong><span>2️⃣</span></strong><span>点对点链接：一发一收</span></p></blockquote><h2 id='42-按照覆盖范围分类'><span>4.2. 按照覆盖范围分类  </span></h2><blockquote><h3 id='421-panlanman个域网核心问题'><span>4.2.1. PAN/LAN/MAN个域网&amp;</span><mark><span>(核心问题)</span></mark></h3><blockquote><p><strong><span>1️⃣</span></strong><span>PAN个域网</span><mark><span>(如何连接)</span></mark><span>：设备仅在一个人的范围内通信，如蓝牙</span></p><p><strong><span>2️⃣</span></strong><span>LAN局域网</span><mark><span>(怎么共享信道)</span></mark><span>：范围扩展到了家庭/一栋楼，可为无线(左)/有线(以太网)</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231142522906.png" alt="image-20231231142522906" style="zoom:50%;" /><span> </span></p><p><strong><span>3️⃣</span></strong><span>MAN城域网：信号接入总站然后分发，例如广播电视</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231142700908.png" alt="image-20231231142700908" style="zoom: 67%;" /><span>  </span></p></blockquote><h3 id='422-wan广域网寻找最优路径'><span>4.2.2. WAN广域网</span><mark><span>(寻找最优路径)</span></mark></h3><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231144153271.png" alt="image-20231231144153271" style="zoom: 67%;" /><span>    </span></p><p><strong><span>1️⃣</span></strong><span>子网：线路+路由器集合</span></p><p><strong><span>2️⃣</span></strong><span>WAN种类：VPN，ISP网络服务提供商</span><mark><span>(其子网由不同的公司运营)</span></mark></p><p><strong><span>3️⃣</span></strong><span>示例：三地的网路采用租用线路/互联网/网络服务提供商连接</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231143217031.png" alt="image-20231231143217031" style="zoom: 67%;" /></p><p>&nbsp;</p></blockquote></blockquote></blockquote><h1 id='5-网络实例'><span>5. 网络实例</span></h1><blockquote><h2 id='51-互联网各种类型不同运营商的网络相连'><span>5.1. 互联网：各种类型/不同运营商的网络相连</span></h2><blockquote><p><strong><span>1️⃣</span></strong><span>前互联网时代</span></p><figure class='table-figure'><table><thead><tr><th><span>术语</span></th><th><span>简介</span></th></tr></thead><tbody><tr><td><span>ARPANET</span></td><td><span>互联网的前身，美国防高级研究计划署研发的早期网络</span></td></tr><tr><td><span>NSFNET</span></td><td><span>美国国家科学基金会支持的网络，推动了互联网的发展和普及</span></td></tr></tbody></table></figure><p><strong><span>2️⃣</span></strong><span>互联网结构概览</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231144706306.png" alt="image-20231231144706306" style="zoom: 67%;" /><span> </span></p><figure class='table-figure'><table><thead><tr><th><span>术语</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><span>POP</span></td><td><span>物理接入点，让企业和用户在特定地点入网</span></td></tr><tr><td><span>IXP</span></td><td><span>物理设施，让不同网络交换流量</span></td></tr><tr><td><span>CMTS</span></td><td><span>高速互联网接入服务(有线电视)</span></td></tr><tr><td><span>DSLAM</span></td><td><span>收集用户的DSL连接，汇集到高速连接上</span></td></tr><tr><td><span>路由</span></td><td><span>负责在每个网络中交换数据包。</span></td></tr><tr><td><span>数据中心</span></td><td><span>聚集了服务器，承担了网络大部分流量</span></td></tr><tr><td><span>网络边缘</span></td><td><span>客户接入网络的地方</span></td></tr></tbody></table></figure><p><strong><span>2️⃣</span></strong><span>互联网结构层次</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231145724266.png" alt="image-20231231145724266" style="zoom:67%;" /><span>  </span></p><p><span>推荐一个好玩的网站</span><a href='http://www.opte.org/the-internet/' target='_blank' class='url'>http://www.opte.org/the-internet/</a></p></blockquote><h2 id='52-移动网络'><span>5.2. 移动网络</span></h2><blockquote><h3 id='521-4g-lte结构'><span>5.2.1. 4G LTE结构</span></h3><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231145948979.png" alt="image-20231231145948979" style="zoom: 50%;" /><span> </span></p><p><strong><span>1️⃣</span></strong><span>E-UTRAN：无线接入部分，连接用户设备和网络</span></p><p><strong><span>2️⃣</span></strong><span>EPC：核心部分，完成数据路由和移动性管理</span></p><figure class='table-figure'><table><thead><tr><th><span>术语</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><span>HSS</span></td><td><span>归属用户服务器，存储用户信息</span></td></tr><tr><td><span>MME</span></td><td><span>移动管理结点，负责移</span><mark><span>动性管理</span></mark></td></tr><tr><td><span>S-GW</span></td><td><span>服务网络网关，负责数据包的</span><mark><span>路由和转发</span></mark></td></tr><tr><td><span>P-GW</span></td><td><span>分组数据网关，连接用户和外部网络</span></td></tr></tbody></table></figure></blockquote><h3 id='522-3g结构'><span>5.2.2. 3G结构</span></h3><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171717902.png" alt="image-20231231171717902" style="zoom:67%;" /><span>  </span></p><figure class='table-figure'><table><thead><tr><th><span>术语</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><span>UMTS</span></td><td><span>通用移动通讯系统，宽带/移动/国际漫游</span></td></tr><tr><td><span>RNC</span></td><td><span>无线网络控制器</span></td></tr><tr><td><span>MSC</span></td><td><span>移动交换中心</span></td></tr><tr><td><span>HSS</span></td><td><span>归属用户服务器</span></td></tr><tr><td><span>MGW</span></td><td><span>媒体网关</span></td></tr><tr><td><span>PSTN</span></td><td><span>交换电话网络</span></td></tr></tbody></table></figure></blockquote><h3 id='523-移动网络的世代'><span>5.2.3. 移动网络的世代</span></h3><blockquote><figure class='table-figure'><table><thead><tr><th><span>代数</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><span>1G</span></td><td><span>模拟信号传输语音</span></td></tr><tr><td><span>2G</span></td><td><span>数字信号传输语音，容量大安全性高，提供SMS</span></td></tr><tr><td><span>3G</span></td><td><span>数字语音/宽带数字数据服务，采用蜂窝设计(下图)</span></td></tr><tr><td><span>4G LTE</span></td><td><span>速度更快</span></td></tr><tr><td><span>5G</span></td><td><span>速度更更更快，但信号衰减也更快</span></td></tr></tbody></table></figure><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171732570.png" alt="image-20231231171732570" style="zoom:50%;" /><span>  </span></p></blockquote><h3 id='524-wi-fiwlanieee80211'><span>5.2.4. Wi-Fi(WLAN/IEEE802.11)</span></h3><blockquote><p><strong><span>1️⃣</span></strong><span> </span><strong><span>基础设施无线局域网</span></strong><span>：客户通过接入点接入，接入点通过有线方式连接其他网络</span></p><p><strong><span>2️⃣</span></strong><span> </span><strong><span>Ad hoc网络</span></strong><span>：在相同的无线范围内，客户端可以直接通信</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171747487.png" alt="image-20231231171747487" style="zoom: 67%;" /><span>  </span></p></blockquote></blockquote></blockquote><h1 id='6-网络协议'><span>6. 网络协议</span></h1><blockquote><h2 id='60-设计目标'><span>6.0. 设计目标</span></h2><blockquote><p><strong><span>1️⃣</span></strong><span> 可靠性：检错，纠错，正确路由</span></p><p><strong><span>2️⃣</span></strong><span> 资源分配和调度：拥塞控制，资源共享，可扩展</span></p><p><strong><span>3️⃣</span></strong><span> 可演化性：支持不断变化的网络，使用协议层次结构和地址机制</span></p><p><strong><span>4️⃣</span></strong><mark><span>安全性：保护机密、通信方认证、防止消息篡改</span></mark></p></blockquote><h2 id='61-协议及有关概念'><span>6.1. 协议及有关概念</span></h2><blockquote><p><strong><span>1️⃣</span></strong><span>协议：同一层内，</span><mark><span>通信双方就如何通信的一种约定，包括</span><font color='red'><strong><span>语法/语义/时序</span></strong></font></mark></p><p><span>PS: </span><mark><span>语法：格式/封装/信息控制</span></mark></p><p><strong><span>2️⃣</span></strong><span>接口：定义两层之间如何交互</span></p><p><strong><span>3️⃣</span></strong><span>服务：</span><mark><span>一层为给上一层</span></mark><span>的操作，如请求/响应/确认，</span><mark><span>用户进程通过原语来访问服务</span></mark></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/PicGo-Typora-GitHub-Picture-bed/main/img/image-20230917191846762.png" alt="image-20230917191846762" style="zoom: 33%;" /><span> </span></p></blockquote><h2 id='62-协议分层划分网络功能的主要结构化方法'><span>6.2. 协议分层：划分网络功能的主要结构化方法</span></h2><blockquote><p><strong><span>1️⃣</span></strong><span> 层堆叠：如下图</span></p><ol start='' ><li><p><span>每层只通过下面一层通信，第一层则直接访问物理媒介</span></p></li><li><p><span>每个协议实例都与其对等实体进行虚拟通话</span></p></li><li><p><span>网络架构=层+协议  </span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171645887.png" alt="image-20231231171645887" style="zoom: 67%;" /><span>   </span></p></li></ol><p><strong><span>2️⃣</span></strong><span> 协议堆栈：每一层都使用一个特定的协议，例如传输层的TCP/IP，然后一层层堆起来</span></p><p><strong><span>3️⃣</span></strong><mark><span>分层特点</span></mark></p><ol start='' ><li><p><span>各层独立：只需管好自己这一层(自己曾采用合适技术)，和与其他层的接口就行</span></p></li><li><p><span>灵活性好：任意层变化后，不影响接口的话，相邻层都不影响</span></p></li><li><p><span>易于实现和维护</span></p></li><li><p><span>促进标准化</span></p></li></ol></blockquote></blockquote><h1 id='7-参考模型'><span>7. 参考模型</span></h1><blockquote><h2 id='71-osi'><span>7.1. OSI</span></h2><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171636150.png" alt="image-20231231171636150" style="zoom:67%;" /><span>   </span></p><figure class='table-figure'><table><thead><tr><th><span>OSI模型层级</span></th><th><span>功能描述</span></th></tr></thead><tbody><tr><td><span>物理层</span></td><td><span>管理与物理媒体的直接交互，在物理媒介上传输比特流</span></td></tr><tr><td><span>数据链路层</span></td><td><span>在物理线路上实现可靠传输，将原始比特流封装为帧</span></td></tr><tr><td><span>网络层</span></td><td><span>让数据在链路上传送，包括路径选择和转发</span></td></tr><tr><td><span>传输层</span></td><td><span>确保链路上数据可靠的传输</span></td></tr><tr><td><span>会话层</span></td><td><span>建立/管理/终止数据交换之间的会话</span></td></tr><tr><td><span>表示层</span></td><td><span>讲传输/收到的数据正确解释和解码</span></td></tr><tr><td><span>应用层</span></td><td><span>讲数据塞给对应APP</span></td></tr></tbody></table></figure></blockquote><h2 id='72-tcpip协议'><span>7.2. TCP/IP协议</span></h2><blockquote><p><strong><span>1️⃣</span></strong><span>与OSI结构的对应</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171823811.png" alt="image-20231231171823811" style="zoom: 67%;" /><span> </span></p><p><strong><span>2️⃣</span></strong><span>每一层所用的协议</span></p><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171854122.png" alt="image-20231231171854122" style="zoom:67%;" /><span> </span></p></blockquote><h2 id='73-本书采用的混合模型'><span>7.3. 本书采用的混合模型</span></h2><blockquote><p><img src="https://raw.githubusercontent.com/DANNHIROAKI/New-Picture-Bed/main/img/image-20231231171920873.png" alt="image-20231231171920873" style="zoom:67%;" /><span>  </span></p></blockquote></blockquote><h1 id='8-其他概念'><span>8. 其他概念</span></h1><blockquote><p><strong><span>1️⃣</span></strong><span>网络标准化</span></p><figure class='table-figure'><table><thead><tr><th><span>Body</span></th><th><span>Area</span></th><th><span>Examples</span></th></tr></thead><tbody><tr><td><span>ITU</span></td><td><span>Telecommunications</span></td><td><span>G.992/ADSL/H.264/MPEG4</span></td></tr><tr><td><span>IEEE</span></td><td><span>Communications</span></td><td><span>Ethernet/802.11/ WiFi</span></td></tr><tr><td><span>IETF</span></td><td><span>Internet</span></td><td><span>RFC/HTTP/DNS</span></td></tr><tr><td><span>W3C</span></td><td><span>Web</span></td><td><span>HTML5</span></td></tr></tbody></table></figure><p><strong><span>2️⃣</span></strong><mark><span>有连接与无连接</span></mark></p><ol start='' ><li><p><span>向连接的服务：传数据前建立连接，传完断开(电话)，</span><mark><span>可靠&amp;顺序性好</span></mark></p></li><li><p><span>无连接服务：无需预先建立持续连接(邮件)，</span><mark><span>但可靠性&amp;顺序性更差</span></mark></p></li></ol><p><strong><span>3️⃣</span></strong><span>分组交换和电路交换</span></p><ol start='' ><li><p><span>分组交换：将数据分割成分组，让分组在网络中独立传输</span></p></li><li><p><span>电路交换：双方之间建立一条固定物理线路，直到结束后才断开连接 </span></p></li></ol></blockquote><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
