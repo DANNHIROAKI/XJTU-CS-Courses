@@ -1,5 +1,15 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/DANNHIROAKI/XJTU-CS-Courses) 
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=DANNHIROAKI%2FXJTU-CS-Courses&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=DANNHIROAKI/XJTU-CS-Courses&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=DANNHIROAKI/XJTU-CS-Courses&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=DANNHIROAKI/XJTU-CS-Courses&type=date&legend=top-left" />
+ </picture>
+</a>
+
 :one:关于本仓库
 
 1. 本人是21届计算机越杰的同学，[个人主页](https://dannhiroaki.github.io/)
